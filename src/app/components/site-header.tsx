@@ -1,8 +1,8 @@
-import { Button } from '@/app/components/ui/button';
-import { Menu, X, Search, Github } from 'lucide-react';
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router';
-import { ThemeToggle } from '@/app/components/theme-toggle';
+import { Button } from "@/app/components/ui/button";
+import { Menu, X, Search, Github } from "lucide-react";
+import { useState } from "react";
+import { Link, useLocation } from "react-router";
+import { ThemeToggle } from "@/app/components/theme-toggle";
 
 interface SiteHeaderProps {
   onCommandOpen?: () => void;
@@ -13,15 +13,15 @@ export function SiteHeader({ onCommandOpen }: SiteHeaderProps) {
   const location = useLocation();
 
   const navItems = [
-    { id: 'home', label: 'Home', path: '/' },
-    { id: 'resume', label: 'Resume', path: '/resume' },
-    { id: 'certifications', label: 'Certifications', path: '/certifications' },
-    { id: 'contact', label: 'Contact', path: '/contact' }
+    { id: "home", label: "Home", path: "/" },
+    { id: "resume", label: "Resume", path: "/resume" },
+    { id: "certifications", label: "Certifications", path: "/certifications" },
+    { id: "contact", label: "Contact", path: "/contact" },
   ];
 
   const isActive = (path: string) => {
-    if (path === '/') {
-      return location.pathname === '/' || location.pathname.startsWith('/blog');
+    if (path === "/") {
+      return location.pathname === "/" || location.pathname.startsWith("/blog");
     }
     return location.pathname === path;
   };
@@ -39,7 +39,7 @@ export function SiteHeader({ onCommandOpen }: SiteHeaderProps) {
             <Link
               to="/"
               className="text-xl md:text-2xl font-semibold tracking-tight text-[--color-text-primary] hover:text-[--color-accent-primary] transition-colors duration-200"
-              style={{ fontFamily: 'var(--font-sans)' }}
+              style={{ fontFamily: "var(--font-sans)" }}
             >
               Justin Ilić
             </Link>
@@ -52,8 +52,8 @@ export function SiteHeader({ onCommandOpen }: SiteHeaderProps) {
                   to={item.path}
                   className={`text-sm font-medium transition-colors duration-200 ${
                     isActive(item.path)
-                      ? 'text-[--color-accent-primary]'
-                      : 'text-[--color-text-secondary] hover:text-[--color-text-primary]'
+                      ? "text-[--color-accent-primary]"
+                      : "text-[--color-text-secondary] hover:text-[--color-text-primary]"
                   }`}
                 >
                   {item.label}
@@ -126,8 +126,8 @@ export function SiteHeader({ onCommandOpen }: SiteHeaderProps) {
                     onClick={handleMobileNavClick}
                     className={`text-lg font-medium transition-colors duration-200 w-full text-left block ${
                       isActive(item.path)
-                        ? 'text-[--color-accent-primary]'
-                        : 'text-[--color-text-secondary] hover:text-[--color-text-primary]'
+                        ? "text-[--color-accent-primary]"
+                        : "text-[--color-text-secondary] hover:text-[--color-text-primary]"
                     }`}
                   >
                     {item.label}

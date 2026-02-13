@@ -1,17 +1,17 @@
-import { Link } from 'react-router';
-import { Github } from 'lucide-react';
+import { Link } from "react-router";
+import { Github } from "lucide-react";
 
 export function SiteFooter() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { label: 'Home', path: '/' },
-    { label: 'Resume', path: '/resume' },
-    { label: 'Certifications', path: '/certifications' },
-    { label: 'Contact', path: '/contact' }
+    { label: "Home", path: "/" },
+    { label: "Resume", path: "/resume" },
+    { label: "Certifications", path: "/certifications" },
+    { label: "Contact", path: "/contact" },
   ];
 
-  const topics = ['Security', 'DevOps', 'Frontend', 'Backend'];
+  const topics = ["Security", "DevOps", "Frontend", "Backend"];
 
   return (
     <footer className="border-t border-[--color-border-subtle] mt-20">

@@ -1,8 +1,12 @@
-import { useState, useRef, useEffect } from 'react';
-import { Share2, Check, Link as LinkIcon } from 'lucide-react';
-import { Popover, PopoverTrigger, PopoverContent } from '@/app/components/ui/popover';
-import { Input } from '@/app/components/ui/input';
-import { copyToClipboard } from '@/app/utils/clipboard';
+import { useState, useRef, useEffect } from "react";
+import { Share2, Check, Link as LinkIcon } from "lucide-react";
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@/app/components/ui/popover";
+import { Input } from "@/app/components/ui/input";
+import { copyToClipboard } from "@/app/utils/clipboard";
 
 interface SharePopoverProps {
   url: string;
@@ -16,15 +20,15 @@ export function SharePopover({ url, title }: SharePopoverProps) {
 
   const handleCopyLink = async () => {
     const success = await copyToClipboard(url);
-    
+
     if (success) {
       setCopied(true);
-      
+
       // Select the input text for visual feedback
       if (inputRef.current) {
         inputRef.current.select();
       }
-      
+
       setTimeout(() => {
         setCopied(false);
       }, 2000);
@@ -38,14 +42,14 @@ export function SharePopover({ url, title }: SharePopoverProps) {
   };
 
   const handleShareTwitter = () => {
-    const tweetText = title ? `Check out: ${title}` : '';
+    const tweetText = title ? `Check out: ${title}` : "";
     const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(tweetText)}`;
-    window.open(twitterUrl, '_blank', 'noopener,noreferrer');
+    window.open(twitterUrl, "_blank", "noopener,noreferrer");
   };
 
   const handleShareLinkedIn = () => {
     const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
-    window.open(linkedInUrl, '_blank', 'noopener,noreferrer');
+    window.open(linkedInUrl, "_blank", "noopener,noreferrer");
   };
 
   // Reset copied state when popover closes
@@ -67,9 +71,9 @@ export function SharePopover({ url, title }: SharePopoverProps) {
           <span className="text-sm text-[--color-text-secondary]">Share</span>
         </button>
       </PopoverTrigger>
-      
-      <PopoverContent 
-        align="end" 
+
+      <PopoverContent
+        align="end"
         className="w-80 p-0 bg-[--color-bg-primary] border-[--color-border-default] shadow-lg"
         sideOffset={8}
       >
@@ -86,7 +90,10 @@ export function SharePopover({ url, title }: SharePopoverProps) {
 
           {/* URL Input */}
           <div className="space-y-2">
-            <label htmlFor="share-url" className="text-xs font-medium text-[--color-text-secondary]">
+            <label
+              htmlFor="share-url"
+              className="text-xs font-medium text-[--color-text-secondary]"
+            >
               Post URL
             </label>
             <div className="relative">
@@ -148,22 +155,32 @@ export function SharePopover({ url, title }: SharePopoverProps) {
               type="button"
               aria-label="Share on X (Twitter)"
             >
-              <svg className="h-4 w-4 text-[--color-text-secondary]" viewBox="0 0 24 24" fill="currentColor">
+              <svg
+                className="h-4 w-4 text-[--color-text-secondary]"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
               <span className="text-sm text-[--color-text-secondary]">X</span>
             </button>
-            
+
             <button
               onClick={handleShareLinkedIn}
               className="flex-1 flex items-center justify-center gap-2 min-h-[44px] px-4 py-2.5 rounded-[--radius-md] border border-[--color-border-default] bg-[--color-bg-primary] hover:bg-[--color-bg-secondary] transition-colors duration-200 cursor-pointer"
               type="button"
               aria-label="Share on LinkedIn"
             >
-              <svg className="h-4 w-4 text-[--color-text-secondary]" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              <svg
+                className="h-4 w-4 text-[--color-text-secondary]"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
               </svg>
-              <span className="text-sm text-[--color-text-secondary]">LinkedIn</span>
+              <span className="text-sm text-[--color-text-secondary]">
+                LinkedIn
+              </span>
             </button>
           </div>
         </div>

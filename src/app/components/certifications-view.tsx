@@ -127,8 +127,9 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
               className="text-xl text-[--color-text-secondary]"
               style={{ lineHeight: "1.8" }}
             >
-              Professional certifications and credentials demonstrating
-              expertise across design, development, and cloud technologies.
+              Professional certifications and coursework demonstrating a strong
+              foundation in computer science, web development, and application
+              security.
             </p>
           </header>
 

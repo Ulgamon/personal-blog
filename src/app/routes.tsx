@@ -1,21 +1,22 @@
-import { createBrowserRouter } from 'react-router';
-import { BlogListView } from '@/app/components/blog-list-view';
-import { BlogPostView } from '@/app/components/blog-post-view';
-import { ResumeView } from '@/app/components/resume-view';
-import { CertificationsView } from '@/app/components/certifications-view';
-import { ContactView } from '@/app/components/contact-view';
-import { RootLayout } from '@/app/components/root-layout';
-import { useParams, useNavigate, useOutletContext } from 'react-router';
-import { useEffect } from 'react';
-import { findPostBySlug } from '@/app/utils/slug';
-import type { BlogPost } from '@/app/App';
+import { createBrowserRouter } from "react-router";
+import { BlogListView } from "@/app/components/blog-list-view";
+import { BlogPostView } from "@/app/components/blog-post-view";
+import { ResumeView } from "@/app/components/resume-view";
+import { CertificationsView } from "@/app/components/certifications-view";
+import { ContactView } from "@/app/components/contact-view";
+import { RootLayout } from "@/app/components/root-layout";
+import { useParams, useNavigate, useOutletContext } from "react-router";
+import { useEffect } from "react";
+import { findPostBySlug } from "@/app/utils/slug";
+import type { BlogPost } from "@/app/App";
 
 // Mock blog data - same as in App.tsx
 export const mockBlogPosts: BlogPost[] = [
   {
     id: 1,
     title: "Understanding OAuth 2.0 Security Best Practices",
-    excerpt: "A practical guide to implementing secure OAuth 2.0 flows and avoiding common vulnerabilities in modern authentication systems.",
+    excerpt:
+      "A practical guide to implementing secure OAuth 2.0 flows and avoiding common vulnerabilities in modern authentication systems.",
     content: `# Understanding OAuth 2.0 Security Best Practices
 
 OAuth 2.0 is the industry-standard protocol for authorization, but implementing it securely requires understanding its nuances and potential pitfalls.
@@ -123,14 +124,16 @@ OAuth 2.0 security requires careful implementation, constant vigilance, and stay
     date: "2026-02-10",
     readTime: "9 min read",
     category: "Security",
-    imageUrl: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1200&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1200&q=80",
     tags: ["OAuth", "Authentication", "Security", "Web Security"],
-    slug: "understanding-oauth-2-0-security-best-practices"
+    slug: "understanding-oauth-2-0-security-best-practices",
   },
   {
     id: 2,
     title: "Building Secure CI/CD Pipelines",
-    excerpt: "Learn how to secure your deployment pipeline from code commit to production, preventing supply chain attacks and unauthorized access.",
+    excerpt:
+      "Learn how to secure your deployment pipeline from code commit to production, preventing supply chain attacks and unauthorized access.",
     content: `# Building Secure CI/CD Pipelines
 
 A compromised CI/CD pipeline can be devastating. Here's how to build security into every stage of your deployment process.
@@ -259,14 +262,16 @@ Security must be built into your CI/CD pipeline from the start. Regular audits, 
     date: "2026-02-08",
     readTime: "10 min read",
     category: "Development / DevOps",
-    imageUrl: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=1200&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=1200&q=80",
     tags: ["DevOps", "CI/CD", "Security", "Infrastructure"],
-    slug: "building-secure-ci-cd-pipelines"
+    slug: "building-secure-ci-cd-pipelines",
   },
   {
     id: 3,
     title: "Preventing XSS Attacks in Modern Web Applications",
-    excerpt: "Cross-site scripting remains one of the most common vulnerabilities. Here's how to protect your applications effectively.",
+    excerpt:
+      "Cross-site scripting remains one of the most common vulnerabilities. Here's how to protect your applications effectively.",
     content: `# Preventing XSS Attacks in Modern Web Applications
 
 Cross-site scripting (XSS) vulnerabilities allow attackers to inject malicious scripts into your application. Understanding and preventing them is crucial for web security.
@@ -441,14 +446,16 @@ Preventing XSS requires a combination of input validation, output encoding, CSP,
     date: "2026-02-05",
     readTime: "8 min read",
     category: "Security",
-    imageUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80",
     tags: ["XSS", "Web Security", "Frontend", "Security"],
-    slug: "preventing-xss-attacks-in-modern-web-applications"
+    slug: "preventing-xss-attacks-in-modern-web-applications",
   },
   {
     id: 4,
     title: "Modern Frontend State Management Patterns",
-    excerpt: "Explore practical approaches to managing state in React applications, from simple context to advanced patterns.",
+    excerpt:
+      "Explore practical approaches to managing state in React applications, from simple context to advanced patterns.",
     content: `# Modern Frontend State Management Patterns
 
 State management in frontend applications has evolved significantly. Let's explore practical patterns that work for real-world applications.
@@ -667,14 +674,16 @@ Modern state management is about choosing the right tool for each type of state.
     date: "2026-02-02",
     readTime: "9 min read",
     category: "Development / Frontend",
-    imageUrl: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&q=80",
     tags: ["React", "State Management", "Frontend", "TypeScript"],
-    slug: "modern-frontend-state-management-patterns"
+    slug: "modern-frontend-state-management-patterns",
   },
   {
     id: 5,
     title: "Building Resilient Backend APIs",
-    excerpt: "Design patterns and practices for creating robust, scalable backend services that handle failures gracefully.",
+    excerpt:
+      "Design patterns and practices for creating robust, scalable backend services that handle failures gracefully.",
     content: `# Building Resilient Backend APIs
 
 Resilient APIs don't just work when everything is perfect—they handle failures gracefully and recover automatically.
@@ -927,10 +936,11 @@ Building resilient APIs requires implementing multiple layers of protection: tim
     date: "2026-01-30",
     readTime: "11 min read",
     category: "Development / Backend",
-    imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
     tags: ["Backend", "API Design", "Resilience", "Node.js"],
-    slug: "building-resilient-backend-apis"
-  }
+    slug: "building-resilient-backend-apis",
+  },
 ];
 
 // Blog Post Page Component
@@ -938,16 +948,16 @@ function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const { onCommandOpen } = useOutletContext<{ onCommandOpen: () => void }>();
-  const post = findPostBySlug(mockBlogPosts, slug || '');
-  
+  const post = findPostBySlug(mockBlogPosts, slug || "");
+
   if (!post) {
     // Redirect to home if post not found
     useEffect(() => {
-      navigate('/');
+      navigate("/");
     }, [navigate]);
     return null;
   }
-  
+
   return <BlogPostView post={post} onCommandOpen={onCommandOpen} />;
 }
 
@@ -978,7 +988,7 @@ function ContactPage() {
 // Create the router
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     Component: RootLayout,
     children: [
       {
@@ -986,19 +996,19 @@ export const router = createBrowserRouter([
         Component: HomePage,
       },
       {
-        path: 'blog/:slug',
+        path: "blog/:slug",
         Component: BlogPostPage,
       },
       {
-        path: 'resume',
+        path: "resume",
         Component: ResumePage,
       },
       {
-        path: 'certifications',
+        path: "certifications",
         Component: CertificationsPage,
       },
       {
-        path: 'contact',
+        path: "contact",
         Component: ContactPage,
       },
     ],
