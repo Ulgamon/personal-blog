@@ -1,7 +1,7 @@
-import { Button } from '@/app/components/ui/button';
-import { useState } from 'react';
-import { SiteHeader } from '@/app/components/site-header';
-import { SiteFooter } from '@/app/components/site-footer';
+import { Button } from "@/app/components/ui/button";
+import { useState } from "react";
+import { SiteHeader } from "@/app/components/site-header";
+import { SiteFooter } from "@/app/components/site-footer";
 
 interface ContactViewProps {
   onCommandOpen?: () => void;
@@ -9,21 +9,23 @@ interface ContactViewProps {
 
 export function ContactView({ onCommandOpen }: ContactViewProps) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Form submission would go here
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -37,8 +39,12 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
         {/* Header */}
         <header className="mb-12 md:mb-16">
           <h1 className="mb-6 leading-[1.15]">Contact</h1>
-          <p className="text-lg md:text-xl text-[--color-text-secondary] max-w-2xl" style={{ lineHeight: '1.8' }}>
-            I'd love to hear from you. Whether you have a question or just want to say hello, feel free to reach out.
+          <p
+            className="text-lg md:text-xl text-[--color-text-secondary] max-w-2xl"
+            style={{ lineHeight: "1.8" }}
+          >
+            I'd love to hear from you. Whether you have a question or just want
+            to say hello, feel free to reach out.
           </p>
         </header>
 
@@ -48,8 +54,8 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
           <section>
             <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
               <div>
-                <label 
-                  htmlFor="name" 
+                <label
+                  htmlFor="name"
                   className="block text-sm font-medium text-[--color-text-secondary] mb-2"
                 >
                   Name
@@ -67,8 +73,8 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
               </div>
 
               <div>
-                <label 
-                  htmlFor="email" 
+                <label
+                  htmlFor="email"
                   className="block text-sm font-medium text-[--color-text-secondary] mb-2"
                 >
                   Email
@@ -86,8 +92,8 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
               </div>
 
               <div>
-                <label 
-                  htmlFor="message" 
+                <label
+                  htmlFor="message"
                   className="block text-sm font-medium text-[--color-text-secondary] mb-2"
                 >
                   Message
@@ -104,7 +110,7 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
                 />
               </div>
 
-              <Button 
+              <Button
                 type="submit"
                 className="w-full md:w-auto bg-[--color-accent-primary] text-white hover:bg-[--color-accent-hover] px-8 py-6 text-base rounded-[--radius-md] transition-colors duration-200"
               >
@@ -120,11 +126,11 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
               <h2 className="text-sm font-semibold mb-4 text-[--color-text-tertiary] uppercase tracking-wide">
                 Email
               </h2>
-              <a 
-                href="mailto:justin.ilic@example.com"
+              <a
+                href="mailto:ilicjustin@gmail.com"
                 className="text-base md:text-lg text-[--color-text-primary] hover:text-[--color-accent-primary] transition-colors duration-200 break-all"
               >
-                justin.ilic@example.com
+                ilicjustin@gmail.com
               </a>
             </div>
 
@@ -135,8 +141,8 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
               </h2>
               <div className="space-y-3">
                 <div>
-                  <a 
-                    href="https://github.com/justinilic"
+                  <a
+                    href="https://github.com/Ulgamon"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-base text-[--color-text-secondary] hover:text-[--color-accent-primary] transition-colors duration-200"
@@ -145,8 +151,8 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
                   </a>
                 </div>
                 <div>
-                  <a 
-                    href="https://linkedin.com/in/justinilic"
+                  <a
+                    href="https://www.linkedin.com/in/justin-ilic/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-base text-[--color-text-secondary] hover:text-[--color-accent-primary] transition-colors duration-200"
@@ -163,7 +169,7 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
                 Location
               </h2>
               <p className="text-base text-[--color-text-secondary]">
-                San Francisco, California
+                Vršac, Serbia
               </p>
             </div>
           </aside>

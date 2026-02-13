@@ -1,10 +1,10 @@
-import { Button } from '@/app/components/ui/button';
-import { Badge } from '@/app/components/ui/badge';
-import { Separator } from '@/app/components/ui/separator';
-import { ExternalLink } from 'lucide-react';
-import { SiteHeader } from '@/app/components/site-header';
-import { SiteFooter } from '@/app/components/site-footer';
-import { Link } from 'react-router';
+import { Button } from "@/app/components/ui/button";
+import { Badge } from "@/app/components/ui/badge";
+import { Separator } from "@/app/components/ui/separator";
+import { ExternalLink } from "lucide-react";
+import { SiteHeader } from "@/app/components/site-header";
+import { SiteFooter } from "@/app/components/site-footer";
+import { Link } from "react-router";
 
 interface CertificationsViewProps {
   onCommandOpen?: () => void;
@@ -13,33 +13,103 @@ interface CertificationsViewProps {
 export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
   const certifications = [
     {
-      name: 'AWS Certified Solutions Architect – Associate',
-      issuer: 'Amazon Web Services',
-      date: 'January 2025',
-      credentialId: 'AWS-SA-2025-12345',
-      skills: ['Cloud Architecture', 'AWS Services', 'System Design']
+      name: "SignalR Mastery: Become a Pro in Real-Time Web Development",
+      issuer: "Udemy",
+      date: "September 2025",
+      credentialId: "UC-fb964aa9-b7ad-4b63-ab66-a2bceefe2cd6",
+      skills: [
+        "ASP.NET Core SignalR",
+        "Real-Time Communication",
+        "WebSockets",
+        "Event-Driven Architecture",
+        "Scalable Messaging",
+        "Secure Real-Time Applications",
+      ],
+      link: "https://www.udemy.com/certificate/UC-fb964aa9-b7ad-4b63-ab66-a2bceefe2cd6/",
     },
     {
-      name: 'Professional Scrum Master I (PSM I)',
-      issuer: 'Scrum.org',
-      date: 'September 2024',
-      credentialId: 'PSM-2024-67890',
-      skills: ['Agile', 'Scrum', 'Team Leadership']
+      name: "CS50’s Introduction to Databases with SQL",
+      issuer: "Harvard University",
+      date: "April 2024",
+      credentialId: "eda33862-03ec-4d52-bdde-9a4686ba9fe1",
+      skills: [
+        "Relational Databases",
+        "SQL",
+        "Data Modeling",
+        "Normalization",
+        "Indexing",
+        "Query Optimization",
+        "Transactions",
+        "SQL Injection Prevention",
+      ],
+      link: "https://certificates.cs50.io/eda33862-03ec-4d52-bdde-9a4686ba9fe1.pdf?size=letter",
     },
     {
-      name: 'Google UX Design Certificate',
-      issuer: 'Google',
-      date: 'June 2023',
-      credentialId: 'GUX-2023-54321',
-      skills: ['UX Research', 'Prototyping', 'User Testing']
+      name: "Front End Development Libraries V8",
+      issuer: "freeCodeCamp.org",
+      date: "March 2024",
+      credentialId: "ulgamon/front-end-development-libraries",
+      skills: [
+        "React",
+        "JavaScript (ES6+)",
+        "Component-Based Architecture",
+        "Hooks",
+        "State Management",
+        "Client-Side Routing",
+        "Responsive UI Development",
+      ],
+      link: "https://www.freecodecamp.org/certification/ulgamon/front-end-development-libraries",
     },
     {
-      name: 'React Developer Certification',
-      issuer: 'Meta',
-      date: 'March 2023',
-      credentialId: 'META-REACT-2023-98765',
-      skills: ['React', 'JavaScript', 'Component Design']
-    }
+      name: "CS50’s Introduction to Databases with SQL",
+      issuer: "Harvard University",
+      date: "December 2023",
+      credentialId: "b5ca7ada-0fd7-4fce-9b65-47af82a48413",
+      skills: [
+        "Algorithms",
+        "Data Structures",
+        "C Programming",
+        "Memory Management",
+        "Python",
+        "SQL",
+        "Web Development",
+        "Secure Coding Fundamentals",
+      ],
+      link: "https://certificates.cs50.io/b5ca7ada-0fd7-4fce-9b65-47af82a48413.pdf?size=letter",
+    },
+    {
+      name: "Legacy Responsive Web Design V8",
+      issuer: "freeCodeCamp.org",
+      date: "November 2023",
+      credentialId: "ulgamon/responsive-web-design",
+      skills: [
+        "Responsive Web Design",
+        "HTML5",
+        "CSS3",
+        "Flexbox",
+        "CSS Grid",
+        "Media Queries",
+        "Accessibility",
+        "Mobile-First Layouts",
+      ],
+      link: "https://www.freecodecamp.org/certification/ulgamon/responsive-web-design",
+    },
+    {
+      name: "Legacy JavaScript Algorithms and Data Structures V7",
+      issuer: "freeCodeCamp.org",
+      date: "February 2023",
+      credentialId: "ulgamon/javascript-algorithms-and-data-structures",
+      skills: [
+        "JavaScript (ES6)",
+        "Algorithms",
+        "Data Structures",
+        "Recursion",
+        "Functional Programming",
+        "Big O Complexity",
+        "Problem Solving",
+      ],
+      link: "https://www.freecodecamp.org/certification/ulgamon/javascript-algorithms-and-data-structures",
+    },
   ];
 
   return (
@@ -53,8 +123,12 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
           {/* Header */}
           <header className="mb-16">
             <h1 className="mb-6 leading-[1.15]">Certifications</h1>
-            <p className="text-xl text-[--color-text-secondary]" style={{ lineHeight: '1.8' }}>
-              Professional certifications and credentials demonstrating expertise across design, development, and cloud technologies.
+            <p
+              className="text-xl text-[--color-text-secondary]"
+              style={{ lineHeight: "1.8" }}
+            >
+              Professional certifications and credentials demonstrating
+              expertise across design, development, and cloud technologies.
             </p>
           </header>
 
@@ -72,7 +146,9 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
                     <h2 className="text-xl md:text-2xl font-semibold mb-2 leading-tight">
                       {cert.name}
                     </h2>
-                    <p className="text-[--color-text-secondary] mb-3">{cert.issuer}</p>
+                    <p className="text-[--color-text-secondary] mb-3">
+                      {cert.issuer}
+                    </p>
                   </div>
                   <div className="text-sm text-[--color-text-tertiary] md:text-right">
                     {cert.date}
@@ -80,28 +156,39 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
                 </div>
 
                 <div className="mb-6">
-                  <p className="text-sm text-[--color-text-tertiary] mb-1">Credential ID</p>
-                  <p className="text-sm font-mono text-[--color-text-secondary]">{cert.credentialId}</p>
+                  <p className="text-sm text-[--color-text-tertiary] mb-1">
+                    Credential ID
+                  </p>
+                  <p className="text-sm font-mono text-[--color-text-secondary]">
+                    {cert.credentialId}
+                  </p>
                 </div>
 
                 <div className="mb-6">
-                  <p className="text-sm text-[--color-text-tertiary] mb-3">Skills</p>
+                  <p className="text-sm text-[--color-text-tertiary] mb-3">
+                    Skills
+                  </p>
                   <div className="flex flex-wrap gap-2">
                     {cert.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="outline" className="rounded-full">
+                      <Badge
+                        key={skillIndex}
+                        variant="outline"
+                        className="rounded-full"
+                      >
                         {skill}
                       </Badge>
                     ))}
                   </div>
                 </div>
-
-                <Button
-                  variant="ghost"
-                  className="text-[--color-accent-primary] hover:text-[--color-accent-hover] p-0 h-auto font-medium transition-colors duration-200 group"
-                >
-                  View credential
-                  <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-                </Button>
+                <a href={cert.link} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="ghost"
+                    className="text-[--color-accent-primary] hover:text-[--color-accent-hover] p-0 h-auto font-medium transition-colors duration-200 group"
+                  >
+                    View credential
+                    <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+                  </Button>
+                </a>
               </article>
             ))}
           </div>
@@ -109,12 +196,20 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
           {/* Additional Info */}
           <div className="mt-20 border-t border-[--color-border-subtle] pt-16">
             <div className="bg-[--color-bg-secondary] border border-[--color-border-subtle] rounded-[--radius-lg] p-8 md:p-10">
-              <h2 className="text-2xl font-semibold mb-4">Continuous Learning</h2>
+              <h2 className="text-2xl font-semibold mb-4">
+                Continuous Learning
+              </h2>
               <p className="text-[--color-text-secondary] leading-relaxed mb-6">
-                Beyond formal certifications, I'm committed to staying current with industry trends and best practices. I regularly participate in workshops, attend conferences, and contribute to open-source projects.
+                Beyond formal certifications, I’m committed to staying current
+                with industry practices and emerging technologies. I regularly
+                study new tools and frameworks, follow security research, and
+                contribute to open-source projects.
               </p>
               <p className="text-[--color-text-secondary] leading-relaxed">
-                Currently pursuing advanced certifications in cloud architecture and accessibility standards.
+                I am currently pursuing the Google Cybersecurity Professional
+                Certificate and Security Analyst Level 1 (SAL1) to deepen my
+                understanding of security operations, threat analysis, and
+                defensive security practices.
               </p>
             </div>
           </div>
@@ -135,7 +230,8 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
               </Link>
               <Link to="/contact">
                 <Button
-                  className="bg-[--color-accent-primary] text-white hover:bg-[--color-accent-hover] px-8 py-6 text-base rounded-[--radius-md] transition-colors duration-200"
+                  variant="ghost"
+                  className="px-8 py-6 text-base rounded-[--radius-md] transition-colors duration-200"
                 >
                   Get in touch
                 </Button>
