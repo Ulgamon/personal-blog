@@ -18,14 +18,14 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
           <header className="mb-20">
             <h1 className="mb-8 leading-[1.15]">Justin Ilić</h1>
             <p
-              className="text-lg text-[--color-text-secondary] mb-2"
+              className="text-lg text-[var(--color-text-secondary)] mb-2"
               style={{ lineHeight: "1.8" }}
             >
               Security-focused developer with a strong foundation in modern web
               development and computer science fundamentals.
             </p>
             <p
-              className="text-base text-[--color-text-tertiary]"
+              className="text-base text-[var(--color-text-tertiary)]"
               style={{ lineHeight: "1.8" }}
             >
               Serbia · ilicjustin@gmail.com
@@ -34,11 +34,11 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
 
           {/* Summary */}
           <section className="mb-20">
-            <h2 className="text-2xl font-semibold mb-8 text-[--color-text-primary]">
+            <h2 className="text-2xl font-semibold mb-8 text-[var(--color-text-primary)]">
               Summary
             </h2>
             <p
-              className="text-[--color-text-secondary] mb-6"
+              className="text-[var(--color-text-secondary)] mb-6"
               style={{ lineHeight: "2" }}
             >
               I build and maintain web applications with a focus on security,
@@ -48,7 +48,7 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
               end-to-end.
             </p>
             <p
-              className="text-[--color-text-secondary]"
+              className="text-[var(--color-text-secondary)]"
               style={{ lineHeight: "2" }}
             >
               Through formal coursework, certifications, and freelance work,
@@ -61,7 +61,7 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
 
           {/* Experience */}
           <section className="mb-20">
-            <h2 className="text-2xl font-semibold mb-10 text-[--color-text-primary]">
+            <h2 className="text-2xl font-semibold mb-10 text-[var(--color-text-primary)]">
               Experience
             </h2>
 
@@ -71,15 +71,15 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
                   <h3 className="text-xl font-semibold mb-1.5">
                     Freelance Web Developer
                   </h3>
-                  <p className="text-[--color-text-secondary] mb-1">
+                  <p className="text-[var(--color-text-secondary)] mb-1">
                     Self-Employed
                   </p>
-                  <p className="text-sm text-[--color-text-tertiary]">
+                  <p className="text-sm text-[var(--color-text-tertiary)]">
                     2022 – Present
                   </p>
                 </div>
                 <div
-                  className="text-[--color-text-secondary] space-y-4"
+                  className="text-[var(--color-text-secondary)] space-y-4"
                   style={{ lineHeight: "2" }}
                 >
                   <p>
@@ -109,7 +109,7 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
 
           {/* Education */}
           <section className="mb-20">
-            <h2 className="text-2xl font-semibold mb-10 text-[--color-text-primary]">
+            <h2 className="text-2xl font-semibold mb-10 text-[var(--color-text-primary)]">
               Education & Certifications
             </h2>
             <article className="mb-10">
@@ -117,13 +117,13 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
                 <h3 className="text-xl font-semibold mb-1.5">
                   SignalR Mastery: Become a Pro in Real-Time Web Development
                 </h3>
-                <p className="text-[--color-text-secondary] mb-1">Udemy</p>
-                <p className="text-sm text-[--color-text-tertiary]">
+                <p className="text-[var(--color-text-secondary)] mb-1">Udemy</p>
+                <p className="text-sm text-[var(--color-text-tertiary)]">
                   September 2025
                 </p>
               </div>
               <p
-                className="text-[--color-text-secondary]"
+                className="text-[var(--color-text-secondary)]"
                 style={{ lineHeight: "2" }}
               >
                 Focused on building real-time web applications using ASP.NET
@@ -136,15 +136,15 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
                 <h3 className="text-xl font-semibold mb-1.5">
                   CS50's Introduction to Databases with SQL
                 </h3>
-                <p className="text-[--color-text-secondary] mb-1">
+                <p className="text-[var(--color-text-secondary)] mb-1">
                   Harvard University
                 </p>
-                <p className="text-sm text-[--color-text-tertiary]">
+                <p className="text-sm text-[var(--color-text-tertiary)]">
                   April 2024
                 </p>
               </div>
               <p
-                className="text-[--color-text-secondary]"
+                className="text-[var(--color-text-secondary)]"
                 style={{ lineHeight: "2" }}
               >
                 Covered relational database design, SQL querying, normalization,
@@ -157,15 +157,15 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
                 <h3 className="text-xl font-semibold mb-1.5">
                   Front End Development Libraries (v8)
                 </h3>
-                <p className="text-[--color-text-secondary] mb-1">
+                <p className="text-[var(--color-text-secondary)] mb-1">
                   freeCodeCamp.org
                 </p>
-                <p className="text-sm text-[--color-text-tertiary]">
+                <p className="text-sm text-[var(--color-text-tertiary)]">
                   March 2024
                 </p>
               </div>
               <p
-                className="text-[--color-text-secondary]"
+                className="text-[var(--color-text-secondary)]"
                 style={{ lineHeight: "2" }}
               >
                 Focused on building single-page applications using React, modern
@@ -178,15 +178,15 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
                 <h3 className="text-xl font-semibold mb-1.5">
                   CS50x: Introduction to Computer Science
                 </h3>
-                <p className="text-[--color-text-secondary] mb-1">
+                <p className="text-[var(--color-text-secondary)] mb-1">
                   Harvard University
                 </p>
-                <p className="text-sm text-[--color-text-tertiary]">
+                <p className="text-sm text-[var(--color-text-tertiary)]">
                   December 2023
                 </p>
               </div>
               <p
-                className="text-[--color-text-secondary]"
+                className="text-[var(--color-text-secondary)]"
                 style={{ lineHeight: "2" }}
               >
                 Covered core computer science concepts including algorithms,
@@ -199,15 +199,15 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
                 <h3 className="text-xl font-semibold mb-1.5">
                   Legacy Responsive Web Design (v8)
                 </h3>
-                <p className="text-[--color-text-secondary] mb-1">
+                <p className="text-[var(--color-text-secondary)] mb-1">
                   freeCodeCamp.org
                 </p>
-                <p className="text-sm text-[--color-text-tertiary]">
+                <p className="text-sm text-[var(--color-text-tertiary)]">
                   November 2023
                 </p>
               </div>
               <p
-                className="text-[--color-text-secondary]"
+                className="text-[var(--color-text-secondary)]"
                 style={{ lineHeight: "2" }}
               >
                 Focused on building accessible, responsive layouts using
@@ -220,15 +220,15 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
                 <h3 className="text-xl font-semibold mb-1.5">
                   Legacy JavaScript Algorithms and Data Structures (v7)
                 </h3>
-                <p className="text-[--color-text-secondary] mb-1">
+                <p className="text-[var(--color-text-secondary)] mb-1">
                   freeCodeCamp.org
                 </p>
-                <p className="text-sm text-[--color-text-tertiary]">
+                <p className="text-sm text-[var(--color-text-tertiary)]">
                   February 2023
                 </p>
               </div>
               <p
-                className="text-[--color-text-secondary]"
+                className="text-[var(--color-text-secondary)]"
                 style={{ lineHeight: "2" }}
               >
                 Covered JavaScript fundamentals, algorithms, data structures,
@@ -241,15 +241,15 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
                 <h3 className="text-xl font-semibold mb-1.5">
                   Computer Science (Coursework)
                 </h3>
-                <p className="text-[--color-text-secondary] mb-1">
+                <p className="text-[var(--color-text-secondary)] mb-1">
                   University of Novi Sad · Faculty of Technical Sciences
                 </p>
-                <p className="text-sm text-[--color-text-tertiary]">
+                <p className="text-sm text-[var(--color-text-tertiary)]">
                   2020 – 2022
                 </p>
               </div>
               <p
-                className="text-[--color-text-secondary]"
+                className="text-[var(--color-text-secondary)]"
                 style={{ lineHeight: "2" }}
               >
                 Completed foundational coursework in computer science, including
@@ -262,17 +262,17 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
 
           {/* Skills */}
           <section className="mb-20">
-            <h2 className="text-2xl font-semibold mb-10 text-[--color-text-primary]">
+            <h2 className="text-2xl font-semibold mb-10 text-[var(--color-text-primary)]">
               Skills
             </h2>
 
             <div className="space-y-8">
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-[--color-text-primary]">
+                <h3 className="text-lg font-semibold mb-4 text-[var(--color-text-primary)]">
                   Development
                 </h3>
                 <p
-                  className="text-[--color-text-secondary]"
+                  className="text-[var(--color-text-secondary)]"
                   style={{ lineHeight: "2" }}
                 >
                   HTML, CSS, JavaScript, TypeScript, React, Tailwind CSS,
@@ -282,11 +282,11 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-[--color-text-primary]">
+                <h3 className="text-lg font-semibold mb-4 text-[var(--color-text-primary)]">
                   Computer Science
                 </h3>
                 <p
-                  className="text-[--color-text-secondary]"
+                  className="text-[var(--color-text-secondary)]"
                   style={{ lineHeight: "2" }}
                 >
                   Algorithms, Data Structures, Time & Space Complexity,
@@ -295,11 +295,11 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-[--color-text-primary]">
+                <h3 className="text-lg font-semibold mb-4 text-[var(--color-text-primary)]">
                   Security
                 </h3>
                 <p
-                  className="text-[--color-text-secondary]"
+                  className="text-[var(--color-text-secondary)]"
                   style={{ lineHeight: "2" }}
                 >
                   Secure Coding Practices, Input Validation, SQL Injection
@@ -309,11 +309,11 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-[--color-text-primary]">
+                <h3 className="text-lg font-semibold mb-4 text-[var(--color-text-primary)]">
                   Tools
                 </h3>
                 <p
-                  className="text-[--color-text-secondary]"
+                  className="text-[var(--color-text-secondary)]"
                   style={{ lineHeight: "2" }}
                 >
                   Git, npm, Browser DevTools, Figma (for collaboration), Command
@@ -322,11 +322,11 @@ export function ResumeView({ onCommandOpen }: ResumeViewProps) {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-[--color-text-primary]">
+                <h3 className="text-lg font-semibold mb-4 text-[var(--color-text-primary)]">
                   Development
                 </h3>
                 <p
-                  className="text-[--color-text-secondary]"
+                  className="text-[var(--color-text-secondary)]"
                   style={{ lineHeight: "2" }}
                 >
                   HTML, CSS, JavaScript, TypeScript, React, Tailwind CSS, Git,

@@ -32,13 +32,13 @@ export function SiteHeader({ onCommandOpen }: SiteHeaderProps) {
 
   return (
     <>
-      <nav className="border-b border-[--color-border-subtle] sticky top-0 bg-[--color-bg-primary]/[0.98] backdrop-blur-xl md:bg-[--color-bg-primary]/95 md:backdrop-blur-md z-50 shadow-sm md:shadow-none">
+      <nav className="border-b border-[var(--color-border-subtle)] sticky top-0 bg-[var(--color-bg-primary)]/[0.98] backdrop-blur-xl md:bg-[var(--color-bg-primary)]/95 md:backdrop-blur-md z-50 shadow-sm md:shadow-none">
         <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 py-4 md:py-5">
           <div className="flex items-center justify-between">
             {/* Logo/Name */}
             <Link
               to="/"
-              className="text-xl md:text-2xl font-semibold tracking-tight text-[--color-text-primary] hover:text-[--color-accent-primary] transition-colors duration-200"
+              className="text-xl md:text-2xl font-semibold tracking-tight text-[var(--color-text-primary)] hover:text-[var(--color-accent-primary)] transition-colors duration-200"
               style={{ fontFamily: "var(--font-sans)" }}
             >
               Justin Ilić
@@ -52,8 +52,8 @@ export function SiteHeader({ onCommandOpen }: SiteHeaderProps) {
                   to={item.path}
                   className={`text-sm font-medium transition-colors duration-200 ${
                     isActive(item.path)
-                      ? "text-[--color-accent-primary]"
-                      : "text-[--color-text-secondary] hover:text-[--color-text-primary]"
+                      ? "text-[var(--color-accent-primary)]"
+                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                   }`}
                 >
                   {item.label}
@@ -63,7 +63,7 @@ export function SiteHeader({ onCommandOpen }: SiteHeaderProps) {
                 href="https://github.com/Ulgamon"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[--color-text-secondary] hover:text-[--color-text-primary] transition-colors duration-200"
+                className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors duration-200"
                 aria-label="GitHub"
               >
                 <Github className="h-5 w-5" />
@@ -74,7 +74,7 @@ export function SiteHeader({ onCommandOpen }: SiteHeaderProps) {
                   variant="ghost"
                   size="icon"
                   onClick={onCommandOpen}
-                  className="rounded-full h-10 w-10 hover:bg-[--color-bg-tertiary] transition-colors duration-200"
+                  className="rounded-full h-10 w-10 hover:bg-[var(--color-bg-tertiary)] transition-colors duration-200"
                   aria-label="Open command palette"
                 >
                   <Search className="h-5 w-5" />
@@ -89,7 +89,7 @@ export function SiteHeader({ onCommandOpen }: SiteHeaderProps) {
                   variant="ghost"
                   size="icon"
                   onClick={onCommandOpen}
-                  className="rounded-full h-10 w-10 hover:bg-[--color-bg-tertiary] transition-colors duration-200"
+                  className="rounded-full h-10 w-10 hover:bg-[var(--color-bg-tertiary)] transition-colors duration-200"
                   aria-label="Open command palette"
                 >
                   <Search className="h-5 w-5" />
@@ -100,7 +100,7 @@ export function SiteHeader({ onCommandOpen }: SiteHeaderProps) {
                 variant="ghost"
                 size="icon"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="rounded-full h-10 w-10 hover:bg-[--color-bg-tertiary] transition-colors duration-200"
+                className="rounded-full h-10 w-10 hover:bg-[var(--color-bg-tertiary)] transition-colors duration-200"
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? (
@@ -116,7 +116,7 @@ export function SiteHeader({ onCommandOpen }: SiteHeaderProps) {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[73px] bg-[--color-bg-primary] z-40 border-t border-[--color-border-subtle]">
+        <div className="md:hidden fixed inset-0 top-[73px] bg-[var(--color-bg-primary)] z-40 border-t border-[var(--color-border-subtle)]">
           <nav className="px-4 sm:px-6 py-8">
             <ul className="space-y-6">
               {navItems.map((item) => (
@@ -126,8 +126,8 @@ export function SiteHeader({ onCommandOpen }: SiteHeaderProps) {
                     onClick={handleMobileNavClick}
                     className={`text-lg font-medium transition-colors duration-200 w-full text-left block ${
                       isActive(item.path)
-                        ? "text-[--color-accent-primary]"
-                        : "text-[--color-text-secondary] hover:text-[--color-text-primary]"
+                        ? "text-[var(--color-accent-primary)]"
+                        : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                     }`}
                   >
                     {item.label}
@@ -140,7 +140,7 @@ export function SiteHeader({ onCommandOpen }: SiteHeaderProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={handleMobileNavClick}
-                  className="text-lg font-medium text-[--color-text-secondary] hover:text-[--color-text-primary] transition-colors duration-200 w-full text-left flex items-center gap-2"
+                  className="text-lg font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors duration-200 w-full text-left flex items-center gap-2"
                 >
                   <Github className="h-5 w-5" />
                   GitHub

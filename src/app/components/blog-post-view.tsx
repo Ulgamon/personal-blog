@@ -34,7 +34,7 @@ export function BlogPostView({ post, onCommandOpen }: BlogPostViewProps) {
       <SiteHeader onCommandOpen={onCommandOpen} />
 
       {/* Hero Image */}
-      <div className="w-full bg-[--color-bg-tertiary]">
+      <div className="w-full bg-[var(--color-bg-tertiary)]">
         <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="aspect-[21/9] overflow-hidden rounded-lg">
             <img
@@ -58,7 +58,7 @@ export function BlogPostView({ post, onCommandOpen }: BlogPostViewProps) {
               >
                 {post.category}
               </Badge>
-              <span className="text-sm text-[--color-text-quaternary]">
+              <span className="text-sm text-[var(--color-text-quaternary)]">
                 {post.readTime}
               </span>
             </div>
@@ -66,8 +66,8 @@ export function BlogPostView({ post, onCommandOpen }: BlogPostViewProps) {
             <h1 className="mb-12 text-balance leading-[1.15]">{post.title}</h1>
 
             <div className="flex items-center gap-4 mb-10">
-              <div className="w-12 h-12 rounded-full bg-[--color-bg-tertiary] flex items-center justify-center">
-                <span className="text-base font-medium text-[--color-text-secondary]">
+              <div className="w-12 h-12 rounded-full bg-[var(--color-bg-tertiary)] flex items-center justify-center">
+                <span className="text-base font-medium text-[var(--color-text-secondary)]">
                   {post.author
                     .split(" ")
                     .map((n) => n[0])
@@ -76,7 +76,7 @@ export function BlogPostView({ post, onCommandOpen }: BlogPostViewProps) {
               </div>
               <div className="flex-1">
                 <p className="font-medium text-base mb-0.5">{post.author}</p>
-                <p className="text-sm text-[--color-text-tertiary]">
+                <p className="text-sm text-[var(--color-text-tertiary)]">
                   {new Date(post.date).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "long",
@@ -88,7 +88,7 @@ export function BlogPostView({ post, onCommandOpen }: BlogPostViewProps) {
               <SharePopover url={postUrl} title={post.title} />
             </div>
 
-            <Separator className="bg-[--color-border-subtle]" />
+            <Separator className="bg-[var(--color-border-subtle)]" />
           </header>
 
           {/* Article Body */}
@@ -174,9 +174,9 @@ export function BlogPostView({ post, onCommandOpen }: BlogPostViewProps) {
           </div>
 
           {/* Tags */}
-          <div className="mt-16 pt-8 border-t border-[--color-border-subtle]">
+          <div className="mt-16 pt-8 border-t border-[var(--color-border-subtle)]">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-sm text-[--color-text-tertiary]">
+              <span className="text-sm text-[var(--color-text-tertiary)]">
                 Tagged:
               </span>
               {post.tags.map((tag) => (
@@ -211,15 +211,15 @@ function CopyButton({ code }: { code: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="flex items-center justify-center min-w-[44px] min-h-[44px] p-3 rounded-[var(--radius-md)] bg-[--color-bg-primary] border border-[--color-border-default] shadow-sm opacity-80 hover:opacity-100 active:scale-95 transition-all duration-150 cursor-pointer"
+      className="flex items-center justify-center min-w-[44px] min-h-[44px] p-3 rounded-[var(--radius-md)] bg-[var(--color-bg-primary)] border border-[var(--color-border-default)] shadow-sm opacity-80 hover:opacity-100 active:scale-95 transition-all duration-150 cursor-pointer"
       aria-label={copied ? "Copied!" : "Copy code"}
       type="button"
       style={{ WebkitTapHighlightColor: "transparent" }}
     >
       {copied ? (
-        <Check className="h-4 w-4 text-[--color-accent-primary]" />
+        <Check className="h-4 w-4 text-[var(--color-accent-primary)]" />
       ) : (
-        <Copy className="h-4 w-4 text-[--color-text-secondary]" />
+        <Copy className="h-4 w-4 text-[var(--color-text-secondary)]" />
       )}
     </button>
   );
