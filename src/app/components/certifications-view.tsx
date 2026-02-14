@@ -124,7 +124,7 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
           <header className="mb-16">
             <h1 className="mb-6 leading-[1.15]">Certifications</h1>
             <p
-              className="text-xl text-[--color-text-secondary]"
+              className="text-xl text-[var(--color-text-secondary)]"
               style={{ lineHeight: "1.8" }}
             >
               Professional certifications and coursework demonstrating a strong
@@ -133,40 +133,40 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
             </p>
           </header>
 
-          <Separator className="bg-[--color-border-subtle] mb-16" />
+          <Separator className="bg-[var(--color-border-subtle)] mb-16" />
 
           {/* Certifications List */}
           <div className="space-y-10">
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="border border-[--color-border-subtle] rounded-[var(--radius-lg)] p-6 md:p-8 bg-[--color-bg-secondary] hover:shadow-[--shadow-md] transition-all duration-300"
+                className="border border-[var(--color-border-subtle)] rounded-[var(--radius-lg)] p-6 md:p-8 bg-[var(--color-bg-secondary)] hover:shadow-[var(--shadow-md)] transition-all duration-300"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-5 gap-3">
                   <div className="flex-1">
                     <h2 className="text-xl md:text-2xl font-semibold mb-2 leading-tight">
                       {cert.name}
                     </h2>
-                    <p className="text-[--color-text-secondary] mb-3">
+                    <p className="text-[var(--color-text-secondary)] mb-3">
                       {cert.issuer}
                     </p>
                   </div>
-                  <div className="text-sm text-[--color-text-tertiary] md:text-right">
+                  <div className="text-sm text-[var(--color-text-tertiary)] md:text-right">
                     {cert.date}
                   </div>
                 </div>
 
                 <div className="mb-6">
-                  <p className="text-sm text-[--color-text-tertiary] mb-1">
+                  <p className="text-sm text-[var(--color-text-tertiary)] mb-1">
                     Credential ID
                   </p>
-                  <p className="text-sm font-mono text-[--color-text-secondary]">
+                  <p className="text-sm font-mono text-[var(--color-text-secondary)]">
                     {cert.credentialId}
                   </p>
                 </div>
 
                 <div className="mb-6">
-                  <p className="text-sm text-[--color-text-tertiary] mb-3">
+                  <p className="text-sm text-[var(--color-text-tertiary)] mb-3">
                     Skills
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -184,7 +184,7 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
 
                 <Button
                   variant="ghost"
-                  className="text-[--color-accent-primary] hover:text-[--color-accent-hover] p-0 h-auto font-medium transition-colors duration-200 group"
+                  className="text-[var(--color-accent-primary)] hover:text-[var(--color-accent-hover)] p-0 h-auto font-medium transition-colors duration-200 group"
                 >
                   View credential
                   <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
@@ -194,18 +194,18 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
           </div>
 
           {/* Additional Info */}
-          <div className="mt-20 border-t border-[--color-border-subtle] pt-16">
-            <div className="bg-[--color-bg-secondary] border border-[--color-border-subtle] rounded-[var(--radius-lg)] p-8 md:p-10">
+          <div className="mt-20 border-t border-[var(--color-border-subtle)] pt-16">
+            <div className="bg-[var(--color-bg-secondary)] border border-[var(--color-border-subtle)] rounded-[var(--radius-lg)] p-8 md:p-10">
               <h2 className="text-2xl font-semibold mb-4">
                 Continuous Learning
               </h2>
-              <p className="text-[--color-text-secondary] leading-relaxed mb-6">
+              <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6">
                 Beyond formal certifications, I’m committed to staying current
                 with industry practices and emerging technologies. I regularly
                 study new tools and frameworks, follow security research, and
                 contribute to open-source projects.
               </p>
-              <p className="text-[--color-text-secondary] leading-relaxed">
+              <p className="text-[var(--color-text-secondary)] leading-relaxed">
                 I am currently pursuing the Google Cybersecurity Professional
                 Certificate and Security Analyst Level 1 (SAL1) to deepen my
                 understanding of security operations, threat analysis, and
@@ -216,14 +216,14 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
 
           {/* CTA */}
           <section className="text-center py-16 mt-12">
-            <p className="text-lg text-[--color-text-secondary] mb-8">
+            <p className="text-lg text-[var(--color-text-secondary)] mb-8">
               Want to learn more about my work?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/resume">
                 <Button
                   variant="outline"
-                  className="px-8 py-6 text-base rounded-[var(--radius-md)] border-[--color-border-default] hover:bg-[--color-bg-tertiary] transition-colors duration-200"
+                  className="px-8 py-6 text-base rounded-[var(--radius-md)] border-[var(--color-border-default)] hover:bg-[var(--color-bg-tertiary)] transition-colors duration-200"
                 >
                   View resume
                 </Button>
@@ -231,7 +231,7 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
               <Link to="/contact">
                 <Button
                   variant="ghost"
-                  className="bg-[--color-accent-primary] hover:bg-[--color-accent-hover] px-8 py-6 text-base rounded-[var(--radius-md)] transition-colors duration-200"
+                  className="bg-[var(--color-accent-primary)] text-white hover:bg-[var(--color-accent-hover)] px-8 py-6 text-base rounded-[var(--radius-md)] transition-colors duration-200"
                 >
                   Get in touch
                 </Button>
