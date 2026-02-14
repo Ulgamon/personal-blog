@@ -1,10 +1,6 @@
-import { useState, useEffect } from "react";
 import { RouterProvider } from "react-router";
 import { ThemeProvider } from "next-themes";
-import { CommandPalette } from "@/app/components/command-palette";
-import { router, mockBlogPosts } from "@/app/routes";
-import { generateSlug } from "@/app/utils/slug";
-import { useNavigate } from "react-router";
+import { router } from "@/app/routes";
 
 export interface BlogPost {
   id: number;

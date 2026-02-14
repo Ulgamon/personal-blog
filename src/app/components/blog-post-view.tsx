@@ -1,18 +1,21 @@
-import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { Copy, Check } from 'lucide-react';
-import type { BlogPost } from '@/app/App';
-import { SiteHeader } from '@/app/components/site-header';
-import { SiteFooter } from '@/app/components/site-footer';
-import { SharePopover } from '@/app/components/share-popover';
-import { useState } from 'react';
-import { useTheme } from 'next-themes';
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import rehypeRaw from 'rehype-raw';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { Badge } from '@/app/components/ui/badge';
-import { Separator } from '@/app/components/ui/separator';
-import { copyToClipboard } from '@/app/utils/clipboard';
+import {
+  oneDark,
+  oneLight,
+} from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Copy, Check } from "lucide-react";
+import type { BlogPost } from "@/app/App";
+import { SiteHeader } from "@/app/components/site-header";
+import { SiteFooter } from "@/app/components/site-footer";
+import { SharePopover } from "@/app/components/share-popover";
+import { useState } from "react";
+import { useTheme } from "next-themes";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { Badge } from "@/app/components/ui/badge";
+import { Separator } from "@/app/components/ui/separator";
+import { copyToClipboard } from "@/app/utils/clipboard";
 
 interface BlogPostViewProps {
   post: BlogPost;
@@ -49,7 +52,10 @@ export function BlogPostView({ post, onCommandOpen }: BlogPostViewProps) {
           {/* Header */}
           <header className="mb-16">
             <div className="flex items-center gap-3 mb-8">
-              <Badge variant="secondary" className="rounded-full text-xs uppercase tracking-wider">
+              <Badge
+                variant="secondary"
+                className="rounded-full text-xs uppercase tracking-wider"
+              >
                 {post.category}
               </Badge>
               <span className="text-sm text-[--color-text-quaternary]">
@@ -57,23 +63,24 @@ export function BlogPostView({ post, onCommandOpen }: BlogPostViewProps) {
               </span>
             </div>
 
-            <h1 className="mb-12 text-balance leading-[1.15]">
-              {post.title}
-            </h1>
+            <h1 className="mb-12 text-balance leading-[1.15]">{post.title}</h1>
 
             <div className="flex items-center gap-4 mb-10">
               <div className="w-12 h-12 rounded-full bg-[--color-bg-tertiary] flex items-center justify-center">
                 <span className="text-base font-medium text-[--color-text-secondary]">
-                  {post.author.split(' ').map(n => n[0]).join('')}
+                  {post.author
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
                 </span>
               </div>
               <div className="flex-1">
                 <p className="font-medium text-base mb-0.5">{post.author}</p>
                 <p className="text-sm text-[--color-text-tertiary]">
-                  {new Date(post.date).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
+                  {new Date(post.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
                   })}
                 </p>
               </div>
@@ -91,30 +98,37 @@ export function BlogPostView({ post, onCommandOpen }: BlogPostViewProps) {
               rehypePlugins={[rehypeRaw]}
               components={{
                 code({ inline, className, children, ...props }: any) {
-                  const match = /language-(\w+)/.exec(className || '');
-                  const codeString = String(children).replace(/\n$/, '');
-                  
+                  const match = /language-(\w+)/.exec(className || "");
+                  const codeString = String(children).replace(/\n$/, "");
+
                   return !inline && match ? (
-                    <div className="relative my-6" style={{ isolation: 'isolate' }}>
+                    <div
+                      className="relative my-6"
+                      style={{ isolation: "isolate" }}
+                    >
                       {/* Code block - base layer */}
                       <div className="relative">
                         <SyntaxHighlighter
-                          style={theme === 'dark' ? oneDark : oneLight}
+                          style={theme === "dark" ? oneDark : oneLight}
                           language={match[1]}
                           PreTag="div"
                           className="rounded-[--radius-md] text-sm"
                           customStyle={{
                             margin: 0,
-                            padding: '1.5rem',
-                            paddingRight: '4rem',
-                            background: theme === 'dark' ? '#1a1a1a' : '#f5f5f4',
+                            padding: "1.5rem",
+                            paddingRight: "4rem",
+                            background:
+                              theme === "dark" ? "#1a1a1a" : "#f5f5f4",
                           }}
                         >
                           {codeString}
                         </SyntaxHighlighter>
                       </div>
                       {/* Copy button - interactive layer on top */}
-                      <div className="absolute top-3 right-3" style={{ zIndex: 100 }}>
+                      <div
+                        className="absolute top-3 right-3"
+                        style={{ zIndex: 100 }}
+                      >
                         <CopyButton code={codeString} />
                       </div>
                     </div>
@@ -125,17 +139,26 @@ export function BlogPostView({ post, onCommandOpen }: BlogPostViewProps) {
                   );
                 },
                 h1: ({ children }) => (
-                  <h1 className="scroll-mt-20" id={String(children).toLowerCase().replace(/\s+/g, '-')}>
+                  <h1
+                    className="scroll-mt-20"
+                    id={String(children).toLowerCase().replace(/\s+/g, "-")}
+                  >
                     {children}
                   </h1>
                 ),
                 h2: ({ children }) => (
-                  <h2 className="scroll-mt-20" id={String(children).toLowerCase().replace(/\s+/g, '-')}>
+                  <h2
+                    className="scroll-mt-20"
+                    id={String(children).toLowerCase().replace(/\s+/g, "-")}
+                  >
                     {children}
                   </h2>
                 ),
                 h3: ({ children }) => (
-                  <h3 className="scroll-mt-20" id={String(children).toLowerCase().replace(/\s+/g, '-')}>
+                  <h3
+                    className="scroll-mt-20"
+                    id={String(children).toLowerCase().replace(/\s+/g, "-")}
+                  >
                     {children}
                   </h3>
                 ),
@@ -153,13 +176,11 @@ export function BlogPostView({ post, onCommandOpen }: BlogPostViewProps) {
           {/* Tags */}
           <div className="mt-16 pt-8 border-t border-[--color-border-subtle]">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-sm text-[--color-text-tertiary]">Tagged:</span>
-              {post.tags.map(tag => (
-                <Badge
-                  key={tag}
-                  variant="outline"
-                  className="rounded-full"
-                >
+              <span className="text-sm text-[--color-text-tertiary]">
+                Tagged:
+              </span>
+              {post.tags.map((tag) => (
+                <Badge key={tag} variant="outline" className="rounded-full">
                   {tag}
                 </Badge>
               ))}
@@ -175,23 +196,35 @@ export function BlogPostView({ post, onCommandOpen }: BlogPostViewProps) {
             <div className="flex items-start gap-6">
               <div className="w-16 h-16 rounded-full bg-[--color-bg-tertiary] flex items-center justify-center flex-shrink-0">
                 <span className="text-xl font-medium">
-                  {post.author.split(' ').map(n => n[0]).join('')}
+                  {post.author
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
                 </span>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2" style={{ fontFamily: 'var(--font-sans)' }}>
+                <h3
+                  className="text-xl font-semibold mb-2"
+                  style={{ fontFamily: "var(--font-sans)" }}
+                >
                   {post.author}
                 </h3>
                 <p className="text-[--color-text-secondary] leading-relaxed mb-4">
-                  {post.author} is a designer and developer passionate about creating 
-                  thoughtful digital experiences. They write about design, code, and 
-                  the intersection of the two.
+                  {post.author} is a designer and developer passionate about
+                  creating thoughtful digital experiences. They write about
+                  design, code, and the intersection of the two.
                 </p>
                 <div className="flex items-center gap-4">
-                  <a href="#" className="text-sm text-[--color-accent-primary] hover:text-[--color-accent-hover] transition-colors">
+                  <a
+                    href="#"
+                    className="text-sm text-[--color-accent-primary] hover:text-[--color-accent-hover] transition-colors"
+                  >
                     Twitter
                   </a>
-                  <a href="#" className="text-sm text-[--color-accent-primary] hover:text-[--color-accent-hover] transition-colors">
+                  <a
+                    href="#"
+                    className="text-sm text-[--color-accent-primary] hover:text-[--color-accent-hover] transition-colors"
+                  >
                     Website
                   </a>
                 </div>
@@ -226,7 +259,7 @@ function CopyButton({ code }: { code: string }) {
       className="flex items-center justify-center min-w-[44px] min-h-[44px] p-3 rounded-[--radius-md] bg-[--color-bg-primary] border border-[--color-border-default] shadow-sm opacity-80 hover:opacity-100 active:scale-95 transition-all duration-150 cursor-pointer"
       aria-label={copied ? "Copied!" : "Copy code"}
       type="button"
-      style={{ WebkitTapHighlightColor: 'transparent' }}
+      style={{ WebkitTapHighlightColor: "transparent" }}
     >
       {copied ? (
         <Check className="h-4 w-4 text-[--color-accent-primary]" />

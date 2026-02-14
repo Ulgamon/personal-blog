@@ -1,13 +1,12 @@
-import { Card } from '@/app/components/ui/card';
-import { Button } from '@/app/components/ui/button';
-import { Input } from '@/app/components/ui/input';
-import { Badge } from '@/app/components/ui/badge';
-import { Search } from 'lucide-react';
-import { useState } from 'react';
-import { SiteHeader } from '@/app/components/site-header';
-import { SiteFooter } from '@/app/components/site-footer';
-import { Link } from 'react-router';
-import { generateSlug } from '@/app/utils/slug';
+import { Button } from "@/app/components/ui/button";
+import { Input } from "@/app/components/ui/input";
+import { Badge } from "@/app/components/ui/badge";
+import { Search } from "lucide-react";
+import { useState } from "react";
+import { SiteHeader } from "@/app/components/site-header";
+import { SiteFooter } from "@/app/components/site-footer";
+import { Link } from "react-router";
+import { generateSlug } from "@/app/utils/slug";
 
 interface BlogPost {
   id: number;
@@ -27,23 +26,30 @@ interface BlogListViewProps {
 }
 
 export function BlogListView({ posts, onCommandOpen }: BlogListViewProps) {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   // Get unique primary categories (Security, Development)
-  const primaryCategories = Array.from(new Set(posts.map(post => {
-    const [primary] = post.category.split(' / ');
-    return primary;
-  })));
+  const primaryCategories = Array.from(
+    new Set(
+      posts.map((post) => {
+        const [primary] = post.category.split(" / ");
+        return primary;
+      }),
+    ),
+  );
 
-  const filteredPosts = posts.filter(post => {
-    const matchesSearch = 
+  const filteredPosts = posts.filter((post) => {
+    const matchesSearch =
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
-    
-    const matchesCategory = !selectedCategory || post.category.startsWith(selectedCategory);
-    
+      post.tags.some((tag) =>
+        tag.toLowerCase().includes(searchQuery.toLowerCase()),
+      );
+
+    const matchesCategory =
+      !selectedCategory || post.category.startsWith(selectedCategory);
+
     return matchesSearch && matchesCategory;
   });
 
@@ -59,8 +65,12 @@ export function BlogListView({ posts, onCommandOpen }: BlogListViewProps) {
             <h1 className="mb-8 text-balance leading-[1.15]">
               Security and development insights
             </h1>
-            <p className="text-[--color-text-secondary] text-lg md:text-xl max-w-2xl" style={{ lineHeight: '1.8' }}>
-              Practical writing about application security, secure development practices, and building reliable software.
+            <p
+              className="text-[--color-text-secondary] text-lg md:text-xl max-w-2xl"
+              style={{ lineHeight: "1.8" }}
+            >
+              Practical writing about application security, secure development
+              practices, and building reliable software.
             </p>
           </div>
         </div>
@@ -92,10 +102,12 @@ export function BlogListView({ posts, onCommandOpen }: BlogListViewProps) {
               >
                 All
               </Button>
-              {primaryCategories.map(category => (
+              {primaryCategories.map((category) => (
                 <Button
                   key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
+                  variant={
+                    selectedCategory === category ? "default" : "outline"
+                  }
                   size="sm"
                   onClick={() => setSelectedCategory(category)}
                   className="rounded-full"
@@ -127,7 +139,9 @@ export function BlogListView({ posts, onCommandOpen }: BlogListViewProps) {
                 <article className="cursor-pointer border border-[--color-border-subtle] rounded-[--radius-lg] p-6 md:p-8 bg-[--color-bg-secondary] hover:shadow-[--shadow-lg] transition-all duration-300 hover:border-[--color-border-default]">
                   <div className="grid md:grid-cols-5 gap-6 md:gap-10">
                     {/* Image */}
-                    <div className={`md:col-span-2 ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
+                    <div
+                      className={`md:col-span-2 ${index % 2 === 0 ? "md:order-1" : "md:order-2"}`}
+                    >
                       <div className="aspect-[4/3] overflow-hidden rounded-[--radius-md] bg-[--color-bg-tertiary]">
                         <img
                           src={post.imageUrl}
@@ -138,9 +152,14 @@ export function BlogListView({ posts, onCommandOpen }: BlogListViewProps) {
                     </div>
 
                     {/* Content */}
-                    <div className={`md:col-span-3 flex flex-col justify-center ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
+                    <div
+                      className={`md:col-span-3 flex flex-col justify-center ${index % 2 === 0 ? "md:order-2" : "md:order-1"}`}
+                    >
                       <div className="flex items-center gap-3 mb-5">
-                        <Badge variant="secondary" className="rounded-full text-xs uppercase tracking-wider">
+                        <Badge
+                          variant="secondary"
+                          className="rounded-full text-xs uppercase tracking-wider"
+                        >
                           {post.category}
                         </Badge>
                         <span className="text-xs text-[--color-text-quaternary] uppercase tracking-wider">
@@ -160,16 +179,21 @@ export function BlogListView({ posts, onCommandOpen }: BlogListViewProps) {
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 rounded-full bg-[--color-bg-tertiary] flex items-center justify-center">
                             <span className="text-sm font-medium text-[--color-text-secondary]">
-                              {post.author.split(' ').map(n => n[0]).join('')}
+                              {post.author
+                                .split(" ")
+                                .map((n) => n[0])
+                                .join("")}
                             </span>
                           </div>
                           <div>
-                            <p className="text-sm font-medium text-[--color-text-primary]">{post.author}</p>
+                            <p className="text-sm font-medium text-[--color-text-primary]">
+                              {post.author}
+                            </p>
                             <p className="text-xs text-[--color-text-quaternary]">
-                              {new Date(post.date).toLocaleDateString('en-US', {
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric'
+                              {new Date(post.date).toLocaleDateString("en-US", {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
                               })}
                             </p>
                           </div>

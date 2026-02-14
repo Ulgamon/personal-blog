@@ -1,36 +1,38 @@
 @theme {
   /* Typography - Editorial system */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Crimson Pro', 'Georgia', serif;
-  --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Crimson Pro", "Georgia", serif;
+  --font-mono: "JetBrains Mono", "Consolas", monospace;
 
   /* Color Palette - Light Theme */
   --color-bg-primary: #fafaf9;
   --color-bg-secondary: #ffffff;
   --color-bg-tertiary: #f5f5f4;
-  
+
   --color-text-primary: #1c1917;
   --color-text-secondary: #57534e;
   --color-text-tertiary: #78716c;
   --color-text-quaternary: #a8a29e;
-  
+
   --color-accent-primary: #0c4a6e;
   --color-accent-hover: #075985;
   --color-accent-light: #e0f2fe;
-  
+
   --color-border-subtle: #e7e5e4;
   --color-border-default: #d6d3d1;
-  
+
   /* Spacing - Editorial scale */
   --space-prose: 68ch;
   --space-narrow: 45rem;
   --space-wide: 75rem;
-  
+
   /* Effects */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
-  
+  --shadow-md:
+    0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
@@ -41,22 +43,23 @@
   --color-bg-primary: #0a0a0a;
   --color-bg-secondary: #141414;
   --color-bg-tertiary: #1a1a1a;
-  
+
   --color-text-primary: #fafaf9;
   --color-text-secondary: #d6d3d1;
   --color-text-tertiary: #a8a29e;
   --color-text-quaternary: #78716c;
-  
+
   --color-accent-primary: #38bdf8;
   --color-accent-hover: #7dd3fc;
   --color-accent-light: #082f49;
-  
+
   --color-border-subtle: #262626;
   --color-border-default: #404040;
-  
+
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
 }
 
 /* Base styles */
@@ -64,83 +67,88 @@
   * {
     @apply border-[--color-border-default];
   }
-  
+
   html {
     @apply antialiased;
-    font-feature-settings: 'cv11', 'ss01';
+    font-feature-settings: "cv11", "ss01";
     font-optical-sizing: auto;
   }
-  
+
   body {
     @apply bg-[--color-bg-primary] text-[--color-text-primary];
     font-family: var(--font-sans);
   }
-  
+
   /* Headings with editorial feel */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-serif);
     font-weight: 600;
     letter-spacing: -0.02em;
     line-height: 1.2;
   }
-  
+
   h1 {
     @apply text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem];
     font-weight: 600;
   }
-  
+
   h2 {
     @apply text-[2rem] md:text-[2.75rem] lg:text-[3.25rem];
   }
-  
+
   h3 {
     @apply text-[1.5rem] md:text-[2rem] lg:text-[2.25rem];
   }
-  
+
   h4 {
     @apply text-[1.25rem] md:text-[1.5rem];
   }
-  
+
   /* Body text optimized for reading */
   p {
     font-size: 1.125rem;
     line-height: 2;
     letter-spacing: 0.01em;
   }
-  
+
   /* Links */
   a {
     @apply text-[--color-accent-primary] transition-colors duration-200;
   }
-  
+
   a:hover {
     @apply text-[--color-accent-hover];
   }
-  
+
   /* Code */
   code {
     font-family: var(--font-mono);
     @apply text-[0.9em];
   }
-  
+
   pre {
     @apply rounded-[--radius-md] p-6 overflow-x-auto;
     background: var(--color-bg-tertiary);
   }
-  
+
   /* Prose - for markdown content */
   .prose {
     @apply max-w-[--space-prose] text-[--color-text-primary];
     font-size: 1.125rem;
     line-height: 2;
   }
-  
+
   .prose p {
     margin-top: 2rem;
     margin-bottom: 2rem;
     line-height: 2;
   }
-  
+
   .prose h1 {
     font-size: 2.5rem;
     line-height: 1.15;
@@ -148,7 +156,7 @@
     margin-bottom: 2rem;
     font-weight: 600;
   }
-  
+
   .prose h2 {
     font-size: 2rem;
     line-height: 1.25;
@@ -156,7 +164,7 @@
     margin-bottom: 1.5rem;
     font-weight: 600;
   }
-  
+
   .prose h3 {
     font-size: 1.5rem;
     line-height: 1.35;
@@ -164,7 +172,7 @@
     margin-bottom: 1rem;
     font-weight: 600;
   }
-  
+
   .prose h4 {
     font-size: 1.25rem;
     line-height: 1.4;
@@ -172,24 +180,25 @@
     margin-bottom: 0.75rem;
     font-weight: 600;
   }
-  
-  .prose ul, .prose ol {
+
+  .prose ul,
+  .prose ol {
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding-left: 1.75rem;
   }
-  
+
   .prose li {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
     line-height: 1.9;
   }
-  
+
   .prose li p {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .prose blockquote {
     border-left-width: 4px;
     border-left-color: var(--color-accent-primary);
@@ -201,44 +210,44 @@
     line-height: 1.9;
     color: var(--color-text-secondary);
   }
-  
+
   .prose blockquote p {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-  
+
   .prose img {
     border-radius: var(--radius-lg);
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
-  
+
   .prose hr {
     border-color: var(--color-border-subtle);
     margin-top: 4rem;
     margin-bottom: 4rem;
   }
-  
+
   .prose a {
     @apply underline underline-offset-2 decoration-[--color-accent-primary]/30;
   }
-  
+
   .prose a:hover {
     @apply decoration-[--color-accent-primary];
   }
-  
+
   .prose code {
     @apply bg-[--color-bg-tertiary] px-1.5 py-0.5 rounded-[--radius-sm] text-[0.9em];
   }
-  
+
   .prose pre code {
     @apply bg-transparent p-0;
   }
-  
+
   .prose strong {
     @apply font-semibold text-[--color-text-primary];
   }
-  
+
   /* Utility classes */
   .text-balance {
     text-wrap: balance;

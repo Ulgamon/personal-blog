@@ -1,6 +1,6 @@
-import { useEffect, useState, useRef } from 'react';
-import { Search, ArrowRight, FileText, User, Award, Mail, Command } from 'lucide-react';
-import type { BlogPost } from '@/app/App';
+import { useEffect, useState, useRef } from "react";
+import { Search, ArrowRight, FileText, User, Award, Mail } from "lucide-react";
+import type { BlogPost } from "@/app/App";
 
 interface CommandPaletteProps {
   isOpen: boolean;
@@ -11,7 +11,7 @@ interface CommandPaletteProps {
 }
 
 interface SearchResult {
-  type: 'page' | 'post';
+  type: "page" | "post";
   id: string;
   title: string;
   subtitle?: string;
@@ -19,62 +19,68 @@ interface SearchResult {
   action: () => void;
 }
 
-export function CommandPalette({ isOpen, onClose, posts, onPostSelect, onNavigate }: CommandPaletteProps) {
-  const [query, setQuery] = useState('');
+export function CommandPalette({
+  isOpen,
+  onClose,
+  posts,
+  onPostSelect,
+  onNavigate,
+}: CommandPaletteProps) {
+  const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   // Static pages
   const pages: SearchResult[] = [
     {
-      type: 'page',
-      id: 'home',
-      title: 'Home',
-      subtitle: 'View all blog posts',
+      type: "page",
+      id: "home",
+      title: "Home",
+      subtitle: "View all blog posts",
       icon: FileText,
       action: () => {
-        onNavigate('home');
+        onNavigate("home");
         onClose();
-      }
+      },
     },
     {
-      type: 'page',
-      id: 'resume',
-      title: 'Resume',
-      subtitle: 'View experience and skills',
+      type: "page",
+      id: "resume",
+      title: "Resume",
+      subtitle: "View experience and skills",
       icon: User,
       action: () => {
-        onNavigate('resume');
+        onNavigate("resume");
         onClose();
-      }
+      },
     },
     {
-      type: 'page',
-      id: 'certifications',
-      title: 'Certifications',
-      subtitle: 'View professional certifications',
+      type: "page",
+      id: "certifications",
+      title: "Certifications",
+      subtitle: "View professional certifications",
       icon: Award,
       action: () => {
-        onNavigate('certifications');
+        onNavigate("certifications");
         onClose();
-      }
+      },
     },
     {
-      type: 'page',
-      id: 'contact',
-      title: 'Contact',
-      subtitle: 'Get in touch',
+      type: "page",
+      id: "contact",
+      title: "Contact",
+      subtitle: "Get in touch",
       icon: Mail,
       action: () => {
-        onNavigate('contact');
+        onNavigate("contact");
         onClose();
-      }
-    }
+      },
+    },
   ];
 
   // Convert blog posts to search results
-  const postResults: SearchResult[] = posts.map(post => ({
-    type: 'post',
+  const postResults: SearchResult[] = posts.map((post) => ({
+    type: "post",
     id: post.id.toString(),
     title: post.title,
     subtitle: post.excerpt,
@@ -82,17 +88,21 @@ export function CommandPalette({ isOpen, onClose, posts, onPostSelect, onNavigat
     action: () => {
       onPostSelect(post);
       onClose();
-    }
+    },
   }));
 
   // Combine and filter results
   const allResults = [...pages, ...postResults];
-  const filteredResults = query.trim() === ''
-    ? allResults.slice(0, 8)
-    : allResults.filter(result =>
-        result.title.toLowerCase().includes(query.toLowerCase()) ||
-        result.subtitle?.toLowerCase().includes(query.toLowerCase())
-      ).slice(0, 8);
+  const filteredResults =
+    query.trim() === ""
+      ? allResults.slice(0, 8)
+      : allResults
+          .filter(
+            (result) =>
+              result.title.toLowerCase().includes(query.toLowerCase()) ||
+              result.subtitle?.toLowerCase().includes(query.toLowerCase()),
+          )
+          .slice(0, 8);
 
   // Reset selected index when query changes
   useEffect(() => {
@@ -103,7 +113,7 @@ export function CommandPalette({ isOpen, onClose, posts, onPostSelect, onNavigat
   useEffect(() => {
     if (isOpen) {
       inputRef.current?.focus();
-      setQuery('');
+      setQuery("");
       setSelectedIndex(0);
     }
   }, [isOpen]);
@@ -113,13 +123,16 @@ export function CommandPalette({ isOpen, onClose, posts, onPostSelect, onNavigat
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isOpen) return;
 
-      if (e.key === 'ArrowDown') {
+      if (e.key === "ArrowDown") {
         e.preventDefault();
-        setSelectedIndex(prev => (prev + 1) % filteredResults.length);
-      } else if (e.key === 'ArrowUp') {
+        setSelectedIndex((prev) => (prev + 1) % filteredResults.length);
+      } else if (e.key === "ArrowUp") {
         e.preventDefault();
-        setSelectedIndex(prev => (prev - 1 + filteredResults.length) % filteredResults.length);
-      } else if (e.key === 'Enter') {
+        setSelectedIndex(
+          (prev) =>
+            (prev - 1 + filteredResults.length) % filteredResults.length,
+        );
+      } else if (e.key === "Enter") {
         e.preventDefault();
         if (filteredResults[selectedIndex]) {
           filteredResults[selectedIndex].action();
@@ -127,8 +140,8 @@ export function CommandPalette({ isOpen, onClose, posts, onPostSelect, onNavigat
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, filteredResults, selectedIndex]);
 
   if (!isOpen) return null;
@@ -136,7 +149,7 @@ export function CommandPalette({ isOpen, onClose, posts, onPostSelect, onNavigat
   return (
     <>
       {/* Backdrop */}
-      <div 
+      <div
         className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50"
         onClick={onClose}
       />
@@ -176,8 +189,8 @@ export function CommandPalette({ isOpen, onClose, posts, onPostSelect, onNavigat
                       onClick={result.action}
                       className={`w-full flex items-start gap-3 px-4 py-3 transition-colors ${
                         index === selectedIndex
-                          ? 'bg-[--color-bg-tertiary]'
-                          : 'hover:bg-[--color-bg-secondary]'
+                          ? "bg-[--color-bg-tertiary]"
+                          : "hover:bg-[--color-bg-secondary]"
                       }`}
                       onMouseEnter={() => setSelectedIndex(index)}
                     >
@@ -207,12 +220,18 @@ export function CommandPalette({ isOpen, onClose, posts, onPostSelect, onNavigat
             <div className="flex items-center justify-between text-xs text-[--color-text-tertiary]">
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-1.5">
-                  <kbd className="px-1.5 py-0.5 bg-[--color-bg-primary] border border-[--color-border-subtle] rounded text-[10px]">↑</kbd>
-                  <kbd className="px-1.5 py-0.5 bg-[--color-bg-primary] border border-[--color-border-subtle] rounded text-[10px]">↓</kbd>
+                  <kbd className="px-1.5 py-0.5 bg-[--color-bg-primary] border border-[--color-border-subtle] rounded text-[10px]">
+                    ↑
+                  </kbd>
+                  <kbd className="px-1.5 py-0.5 bg-[--color-bg-primary] border border-[--color-border-subtle] rounded text-[10px]">
+                    ↓
+                  </kbd>
                   <span>Navigate</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <kbd className="px-1.5 py-0.5 bg-[--color-bg-primary] border border-[--color-border-subtle] rounded text-[10px]">↵</kbd>
+                  <kbd className="px-1.5 py-0.5 bg-[--color-bg-primary] border border-[--color-border-subtle] rounded text-[10px]">
+                    ↵
+                  </kbd>
                   <span>Select</span>
                 </div>
               </div>
