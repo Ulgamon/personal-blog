@@ -32,7 +32,7 @@ export function ThemeToggle() {
       variant="ghost"
       size="icon"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="rounded-full h-10 w-10 hover:bg-[--color-bg-tertiary] transition-colors duration-200"
+      className="rounded-full h-10 w-10 hover:bg-[--color-bg-tertiary] transition-colors duration-200 cursor-pointer"
       aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
     >
       <div className="relative w-[18px] h-[18px]">

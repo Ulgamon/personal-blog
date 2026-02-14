@@ -189,51 +189,6 @@ export function BlogPostView({ post, onCommandOpen }: BlogPostViewProps) {
         </div>
       </article>
 
-      {/* Author Bio */}
-      <section className="border-t border-[--color-border-subtle] bg-[--color-bg-secondary]">
-        <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 py-12">
-          <div className="mx-auto w-full max-w-3xl">
-            <div className="flex items-start gap-6">
-              <div className="w-16 h-16 rounded-full bg-[--color-bg-tertiary] flex items-center justify-center flex-shrink-0">
-                <span className="text-xl font-medium">
-                  {post.author
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </span>
-              </div>
-              <div>
-                <h3
-                  className="text-xl font-semibold mb-2"
-                  style={{ fontFamily: "var(--font-sans)" }}
-                >
-                  {post.author}
-                </h3>
-                <p className="text-[--color-text-secondary] leading-relaxed mb-4">
-                  {post.author} is a designer and developer passionate about
-                  creating thoughtful digital experiences. They write about
-                  design, code, and the intersection of the two.
-                </p>
-                <div className="flex items-center gap-4">
-                  <a
-                    href="#"
-                    className="text-sm text-[--color-accent-primary] hover:text-[--color-accent-hover] transition-colors"
-                  >
-                    Twitter
-                  </a>
-                  <a
-                    href="#"
-                    className="text-sm text-[--color-accent-primary] hover:text-[--color-accent-hover] transition-colors"
-                  >
-                    Website
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <SiteFooter />
     </div>

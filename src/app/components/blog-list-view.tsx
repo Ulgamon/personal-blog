@@ -1,4 +1,3 @@
-import { Card } from "@/app/components/ui/card";
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
 import { Badge } from "@/app/components/ui/badge";
@@ -60,14 +59,14 @@ export function BlogListView({ posts, onCommandOpen }: BlogListViewProps) {
       <SiteHeader onCommandOpen={onCommandOpen} />
 
       {/* Hero Section */}
-      <header className="border-b border-[--color-border-subtle]">
+      <header className="border-b border-[var(--color-border-subtle)]">
         <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
           <div className="max-w-4xl">
             <h1 className="mb-8 text-balance leading-[1.15]">
               Security and development insights
             </h1>
             <p
-              className="text-[--color-text-secondary] text-lg md:text-xl max-w-2xl"
+              className="text-[var(--color-text-secondary)] text-lg md:text-xl max-w-2xl"
               style={{ lineHeight: "1.8" }}
             >
               Practical writing about application security, secure development
@@ -78,18 +77,18 @@ export function BlogListView({ posts, onCommandOpen }: BlogListViewProps) {
       </header>
 
       {/* Filters and Search */}
-      <div className="border-b border-[--color-border-subtle] bg-[--color-bg-secondary]">
+      <div className="border-b border-[var(--color-border-subtle)] bg-[var(--color-bg-secondary)]">
         <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
             {/* Search */}
             <div className="relative w-full md:w-96">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[--color-text-tertiary]" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[var(--color-text-tertiary)]" />
               <Input
                 type="text"
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 bg-[--color-bg-primary] border-[--color-border-default]"
+                className="pl-10 bg-[var(--color-bg-primary)] border-[var(--color-border-default)]"
               />
             </div>
 
@@ -125,7 +124,7 @@ export function BlogListView({ posts, onCommandOpen }: BlogListViewProps) {
       <main className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         {filteredPosts.length === 0 ? (
           <div className="text-center py-20">
-            <p className="text-[--color-text-secondary] text-lg">
+            <p className="text-[var(--color-text-secondary)] text-lg">
               No articles found matching your criteria.
             </p>
           </div>
@@ -137,13 +136,13 @@ export function BlogListView({ posts, onCommandOpen }: BlogListViewProps) {
                 to={`/blog/${generateSlug(post.title)}`}
                 className="group block"
               >
-                <article className="cursor-pointer border border-[--color-border-subtle] rounded-[var(--radius-lg)] p-6 md:p-8 bg-[--color-bg-secondary] hover:shadow-[--shadow-lg] transition-all duration-300 hover:border-[--color-border-default]">
+                <article className="cursor-pointer border border-[var(--color-border-subtle)] rounded-[var(--radius-lg)] p-6 md:p-8 bg-[var(--color-bg-secondary)] hover:shadow-[var(--shadow-lg)] transition-all duration-300 hover:border-[var(--color-border-default)]">
                   <div className="grid md:grid-cols-5 gap-6 md:gap-10">
                     {/* Image */}
                     <div
                       className={`md:col-span-2 ${index % 2 === 0 ? "md:order-1" : "md:order-2"}`}
                     >
-                      <div className="aspect-[4/3] overflow-hidden rounded-[var(--radius-md)] bg-[--color-bg-tertiary]">
+                      <div className="aspect-[4/3] overflow-hidden rounded-[var(--radius-md)] bg-[var(--color-bg-tertiary)]">
                         <img
                           src={post.imageUrl}
                           alt={post.title}
@@ -163,23 +162,23 @@ export function BlogListView({ posts, onCommandOpen }: BlogListViewProps) {
                         >
                           {post.category}
                         </Badge>
-                        <span className="text-xs text-[--color-text-quaternary] uppercase tracking-wider">
+                        <span className="text-xs text-[var(--color-text-quaternary)] uppercase tracking-wider">
                           {post.readTime}
                         </span>
                       </div>
 
-                      <h2 className="text-3xl md:text-4xl font-semibold mb-5 group-hover:text-[--color-accent-primary] transition-colors leading-tight">
+                      <h2 className="text-3xl md:text-4xl font-semibold mb-5 group-hover:text-[var(--color-accent-primary)] transition-colors leading-tight">
                         {post.title}
                       </h2>
 
-                      <p className="text-[--color-text-secondary] mb-8 leading-relaxed text-base">
+                      <p className="text-[var(--color-text-secondary)] mb-8 leading-relaxed text-base">
                         {post.excerpt}
                       </p>
 
-                      <div className="flex items-center justify-between pt-6 border-t border-[--color-border-subtle]">
+                      <div className="flex items-center justify-between pt-6 border-t border-[var(--color-border-subtle)]">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-[--color-bg-tertiary] flex items-center justify-center">
-                            <span className="text-sm font-medium text-[--color-text-secondary]">
+                          <div className="w-10 h-10 rounded-full bg-[var(--color-bg-tertiary)] flex items-center justify-center">
+                            <span className="text-sm font-medium text-[var(--color-text-secondary)]">
                               {post.author
                                 .split(" ")
                                 .map((n) => n[0])
@@ -187,10 +186,10 @@ export function BlogListView({ posts, onCommandOpen }: BlogListViewProps) {
                             </span>
                           </div>
                           <div>
-                            <p className="text-sm font-medium text-[--color-text-primary]">
+                            <p className="text-sm font-medium text-[var(--color-text-primary)]">
                               {post.author}
                             </p>
-                            <p className="text-xs text-[--color-text-quaternary]">
+                            <p className="text-xs text-[var(--color-text-quaternary)]">
                               {new Date(post.date).toLocaleDateString("en-US", {
                                 year: "numeric",
                                 month: "long",
@@ -200,7 +199,7 @@ export function BlogListView({ posts, onCommandOpen }: BlogListViewProps) {
                           </div>
                         </div>
 
-                        <span className="group-hover:translate-x-1 transition-transform text-sm text-[--color-text-tertiary]">
+                        <span className="group-hover:translate-x-1 transition-transform text-sm text-[var(--color-text-tertiary)]">
                           Read more →
                         </span>
                       </div>

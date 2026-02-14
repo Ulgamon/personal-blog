@@ -1,13 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import {
-  Search,
-  ArrowRight,
-  FileText,
-  User,
-  Award,
-  Mail,
-  Command,
-} from "lucide-react";
+import { Search, ArrowRight, FileText, User, Award, Mail } from "lucide-react";
 import type { BlogPost } from "@/app/App";
 
 interface CommandPaletteProps {
@@ -160,8 +152,8 @@ export function CommandPalette({
       <div className="fixed inset-0 backdrop-blur-sm z-50" onClick={onClose} />
 
       {/* Command Palette */}
-      <div className="fixed inset-x-4 top-[20vh] backdrop-blur-none bg-[bg-secondary] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl z-60">
-        <div className="border border-[--color-border-default] rounded-[--radius-lg] shadow-2xl overflow-hidden">
+      <div className="fixed inset-x-4 top-[20vh] backdrop-blur-none bg-[var(--color-bg-secondary)] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl z-60">
+        <div className="border border-[--color-border-default] rounded-[var(--radius-lg)] shadow-2xl overflow-hidden">
           {/* Search Input */}
           <div className="flex items-center gap-3 px-4 py-4 border-b border-[--color-border-subtle]">
             <Search className="h-5 w-5 text-[--color-text-tertiary] flex-shrink-0" />
@@ -173,7 +165,7 @@ export function CommandPalette({
               onChange={(e) => setQuery(e.target.value)}
               className="flex-1 bg-transparent outline-none text-[--color-text-primary] placeholder:text-[--color-text-tertiary]"
             />
-            <kbd className="hidden md:inline-flex items-center gap-1 px-2 py-1 text-xs bg-[--color-bg-tertiary] border border-[--color-border-subtle] rounded-[--radius-sm] text-[--color-text-tertiary]">
+            <kbd className="hidden md:inline-flex items-center gap-1 px-2 py-1 text-xs bg-[--color-bg-tertiary] border border-[--color-border-subtle] rounded-[var(--radius-sm)] text-[--color-text-tertiary]">
               ESC
             </kbd>
           </div>

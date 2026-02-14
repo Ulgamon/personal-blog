@@ -138,9 +138,9 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
           {/* Certifications List */}
           <div className="space-y-10">
             {certifications.map((cert, index) => (
-              <article
+              <div
                 key={index}
-                className="border border-[--color-border-subtle] rounded-[--radius-lg] p-6 md:p-8 bg-[--color-bg-secondary] hover:shadow-[--shadow-md] transition-all duration-300"
+                className="border border-[--color-border-subtle] rounded-[var(--radius-lg)] p-6 md:p-8 bg-[--color-bg-secondary] hover:shadow-[--shadow-md] transition-all duration-300"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-5 gap-3">
                   <div className="flex-1">
@@ -181,22 +181,21 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
                     ))}
                   </div>
                 </div>
-                <a href={cert.link} target="_blank" rel="noopener noreferrer">
-                  <Button
-                    variant="ghost"
-                    className="text-[--color-accent-primary] hover:text-[--color-accent-hover] p-0 h-auto font-medium transition-colors duration-200 group"
-                  >
-                    View credential
-                    <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-                  </Button>
-                </a>
-              </article>
+
+                <Button
+                  variant="ghost"
+                  className="text-[--color-accent-primary] hover:text-[--color-accent-hover] p-0 h-auto font-medium transition-colors duration-200 group"
+                >
+                  View credential
+                  <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+                </Button>
+              </div>
             ))}
           </div>
 
           {/* Additional Info */}
           <div className="mt-20 border-t border-[--color-border-subtle] pt-16">
-            <div className="bg-[--color-bg-secondary] border border-[--color-border-subtle] rounded-[--radius-lg] p-8 md:p-10">
+            <div className="bg-[--color-bg-secondary] border border-[--color-border-subtle] rounded-[var(--radius-lg)] p-8 md:p-10">
               <h2 className="text-2xl font-semibold mb-4">
                 Continuous Learning
               </h2>
@@ -224,7 +223,7 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
               <Link to="/resume">
                 <Button
                   variant="outline"
-                  className="px-8 py-6 text-base rounded-[--radius-md] border-[--color-border-default] hover:bg-[--color-bg-tertiary] transition-colors duration-200"
+                  className="px-8 py-6 text-base rounded-[var(--radius-md)] border-[--color-border-default] hover:bg-[--color-bg-tertiary] transition-colors duration-200"
                 >
                   View resume
                 </Button>
@@ -232,7 +231,7 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
               <Link to="/contact">
                 <Button
                   variant="ghost"
-                  className="px-8 py-6 text-base rounded-[--radius-md] transition-colors duration-200"
+                  className="bg-[--color-accent-primary] hover:bg-[--color-accent-hover] px-8 py-6 text-base rounded-[var(--radius-md)] transition-colors duration-200"
                 >
                   Get in touch
                 </Button>

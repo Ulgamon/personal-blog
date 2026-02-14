@@ -63,7 +63,7 @@ export function SharePopover({ url, title }: SharePopoverProps) {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <button
-          className="flex items-center gap-2 min-h-[44px] px-4 py-2.5 rounded-[--radius-md] border border-[--color-border-default] bg-[--color-bg-primary] hover:bg-[--color-bg-secondary] transition-colors duration-200 cursor-pointer"
+          className="flex items-center gap-2 min-h-[44px] px-4 py-2.5 rounded-[var(--radius-md)] border border-[--color-border-default] bg-[--color-bg-primary] hover:bg-[--color-bg-secondary] transition-colors duration-200 cursor-pointer"
           aria-label="Share this post"
           type="button"
         >
@@ -118,7 +118,7 @@ export function SharePopover({ url, title }: SharePopoverProps) {
           {/* Copy Button */}
           <button
             onClick={handleCopyLink}
-            className="w-full flex items-center justify-center gap-2 min-h-[44px] px-4 py-2.5 rounded-[--radius-md] bg-[--color-accent-primary] hover:bg-[--color-accent-hover] text-white font-medium text-sm transition-colors duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full flex items-center justify-center gap-2 min-h-[44px] px-4 py-2.5 rounded-[var(--radius-md)] bg-[--color-accent-primary] hover:bg-[--color-accent-hover] text-white font-medium text-sm transition-colors duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             type="button"
             disabled={copied}
           >
@@ -151,7 +151,7 @@ export function SharePopover({ url, title }: SharePopoverProps) {
           <div className="flex items-center gap-2">
             <button
               onClick={handleShareTwitter}
-              className="flex-1 flex items-center justify-center gap-2 min-h-[44px] px-4 py-2.5 rounded-[--radius-md] border border-[--color-border-default] bg-[--color-bg-primary] hover:bg-[--color-bg-secondary] transition-colors duration-200 cursor-pointer"
+              className="flex-1 flex items-center justify-center gap-2 min-h-[44px] px-4 py-2.5 rounded-[var(--radius-md)] border border-[--color-border-default] bg-[--color-bg-primary] hover:bg-[--color-bg-secondary] transition-colors duration-200 cursor-pointer"
               type="button"
               aria-label="Share on X (Twitter)"
             >
@@ -167,7 +167,7 @@ export function SharePopover({ url, title }: SharePopoverProps) {
 
             <button
               onClick={handleShareLinkedIn}
-              className="flex-1 flex items-center justify-center gap-2 min-h-[44px] px-4 py-2.5 rounded-[--radius-md] border border-[--color-border-default] bg-[--color-bg-primary] hover:bg-[--color-bg-secondary] transition-colors duration-200 cursor-pointer"
+              className="flex-1 flex items-center justify-center gap-2 min-h-[44px] px-4 py-2.5 rounded-[var(--radius-md)] border border-[--color-border-default] bg-[--color-bg-primary] hover:bg-[--color-bg-secondary] transition-colors duration-200 cursor-pointer"
               type="button"
               aria-label="Share on LinkedIn"
             >

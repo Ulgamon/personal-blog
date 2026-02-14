@@ -139,7 +139,7 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
     touched[key] ? errors[key] : undefined;
 
   const inputBase =
-    "w-full px-4 py-3 md:py-4 bg-[--color-bg-secondary] border rounded-[--radius-md] text-[--color-text-primary] placeholder:text-[--color-text-tertiary] focus:outline-none focus:ring-2 focus:ring-[--color-accent-primary] focus:border-transparent transition-all duration-200";
+    "w-full px-4 py-3 md:py-4 bg-[--color-bg-secondary] border rounded-[var(--radius-md)] text-[--color-text-primary] placeholder:text-[--color-text-tertiary] focus:outline-none focus:ring-2 focus:ring-[--color-accent-primary] focus:border-transparent transition-all duration-200";
 
   const errorText = "mt-2 text-sm text-red-500";
   const helperText = "mt-2 text-sm text-[--color-text-tertiary]";
@@ -183,7 +183,7 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
               {(submitError || submitSuccess) && (
                 <div
                   className={[
-                    "rounded-[--radius-md] border px-4 py-3 text-sm",
+                    "rounded-[var(--radius-md)] border px-4 py-3 text-sm",
                     submitError
                       ? "border-red-500/30 bg-red-500/10 text-red-200"
                       : "border-emerald-500/30 bg-emerald-500/10 text-emerald-200",
@@ -317,7 +317,7 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
                 <Button
                   type="submit"
                   disabled={isSubmitting || !isValid}
-                  className="w-full md:w-auto bg-[--color-accent-primary] text-white hover:bg-[--color-accent-hover] px-8 py-6 text-base rounded-[--radius-md] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full md:w-auto bg-[--color-accent-primary] text-white hover:bg-[--color-accent-hover] px-8 py-6 text-base rounded-[var(--radius-md)] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <span className="inline-flex items-center gap-2">
