@@ -231,7 +231,7 @@ export function CommandPalette({
                   <span>Navigate</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <kbd className="px-1.5 py-0.5 bg-[var(--color-bg-primary)] border border-[var(--color-border-subtle)s] rounded text-[10px]">
+                  <kbd className="px-1.5 py-0.5 bg-[var(--color-bg-primary)] border border-[var(--color-border-subtle)] rounded text-[10px]">
                     ↵
                   </kbd>
                   <span>Select</span>
