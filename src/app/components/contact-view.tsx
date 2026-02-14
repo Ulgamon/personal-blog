@@ -139,10 +139,10 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
     touched[key] ? errors[key] : undefined;
 
   const inputBase =
-    "w-full px-4 py-3 md:py-4 bg-[--color-bg-secondary] border rounded-[var(--radius-md)] text-[--color-text-primary] placeholder:text-[--color-text-tertiary] focus:outline-none focus:ring-2 focus:ring-[--color-accent-primary] focus:border-transparent transition-all duration-200";
+    "w-full px-4 py-3 md:py-4 bg-[var(--color-bg-secondary)] border rounded-[var(--radius-md)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent-primary)] focus:border-transparent transition-all duration-200";
 
   const errorText = "mt-2 text-sm text-red-500";
-  const helperText = "mt-2 text-sm text-[--color-text-tertiary]";
+  const helperText = "mt-2 text-sm text-[var(--color-text-tertiary)]";
 
   return (
     <div className="min-h-screen">
@@ -152,7 +152,7 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
         <header className="mb-12 md:mb-16">
           <h1 className="mb-6 leading-[1.15]">Contact</h1>
           <p
-            className="text-lg md:text-xl text-[--color-text-secondary] max-w-2xl"
+            className="text-lg md:text-xl text-[var(--color-text-secondary)] max-w-2xl"
             style={{ lineHeight: "1.8" }}
           >
             I'd love to hear from you. Whether you have a question or just want
@@ -198,7 +198,7 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-[--color-text-secondary] mb-2"
+                  className="block text-sm font-medium text-[var(--color-text-secondary)] mb-2"
                 >
                   Name
                 </label>
@@ -218,7 +218,7 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
                     inputBase,
                     fieldError("name")
                       ? "border-red-500/60 focus:ring-red-500"
-                      : "border-[--color-border-subtle]",
+                      : "border-[var(--color-border-subtle)]",
                   ].join(" ")}
                   placeholder="Your name"
                   disabled={isSubmitting}
@@ -237,7 +237,7 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-[--color-text-secondary] mb-2"
+                  className="block text-sm font-medium text-[var(--color-text-secondary)] mb-2"
                 >
                   Email
                 </label>
@@ -257,7 +257,7 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
                     inputBase,
                     fieldError("email")
                       ? "border-red-500/60 focus:ring-red-500"
-                      : "border-[--color-border-subtle]",
+                      : "border-[var(--color-border-subtle)]",
                   ].join(" ")}
                   placeholder="your.email@example.com"
                   disabled={isSubmitting}
@@ -276,7 +276,7 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-[--color-text-secondary] mb-2"
+                  className="block text-sm font-medium text-[var(--color-text-secondary)] mb-2"
                 >
                   Message
                 </label>
@@ -297,7 +297,7 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
                     "resize-y",
                     fieldError("message")
                       ? "border-red-500/60 focus:ring-red-500"
-                      : "border-[--color-border-subtle]",
+                      : "border-[var(--color-border-subtle)]",
                   ].join(" ")}
                   placeholder="Your message..."
                   disabled={isSubmitting}
@@ -317,7 +317,7 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
                 <Button
                   type="submit"
                   disabled={isSubmitting || !isValid}
-                  className="w-full md:w-auto bg-[--color-accent-primary] text-white hover:bg-[--color-accent-hover] px-8 py-6 text-base rounded-[var(--radius-md)] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full md:w-auto bg-[var(--color-accent-primary)] text-white hover:bg-[var(--color-accent-hover)] px-8 py-6 text-base rounded-[var(--radius-md)] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <span className="inline-flex items-center gap-2">
@@ -337,19 +337,19 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
 
           <aside className="lg:min-w-[280px] space-y-10 md:space-y-12">
             <div>
-              <h2 className="text-sm font-semibold mb-4 text-[--color-text-tertiary] uppercase tracking-wide">
+              <h2 className="text-sm font-semibold mb-4 text-[var(--color-text-tertiary)] uppercase tracking-wide">
                 Email
               </h2>
               <a
                 href="mailto:ilicjustin@gmail.com"
-                className="text-base md:text-lg text-[--color-text-primary] hover:text-[--color-accent-primary] transition-colors duration-200 break-all"
+                className="text-base md:text-lg text-[var(--color-text-primary)] hover:text-[var(--color-accent-primary)] transition-colors duration-200 break-all"
               >
                 ilicjustin@gmail.com
               </a>
             </div>
 
             <div>
-              <h2 className="text-sm font-semibold mb-4 text-[--color-text-tertiary] uppercase tracking-wide">
+              <h2 className="text-sm font-semibold mb-4 text-[var(--color-text-tertiary)] uppercase tracking-wide">
                 Links
               </h2>
               <div className="space-y-3">
@@ -358,7 +358,7 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
                     href="https://github.com/Ulgamon"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base text-[--color-text-secondary] hover:text-[--color-accent-primary] transition-colors duration-200"
+                    className="text-base text-[var(--color-text-secondary)] hover:text-[var(--color-accent-primary)] transition-colors duration-200"
                   >
                     GitHub
                   </a>
@@ -368,7 +368,7 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
                     href="https://www.linkedin.com/in/justin-ilic/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base text-[--color-text-secondary] hover:text-[--color-accent-primary] transition-colors duration-200"
+                    className="text-base text-[var(--color-text-secondary)] hover:text-[var(--color-accent-primary)] transition-colors duration-200"
                   >
                     LinkedIn
                   </a>
@@ -377,10 +377,10 @@ export function ContactView({ onCommandOpen }: ContactViewProps) {
             </div>
 
             <div>
-              <h2 className="text-sm font-semibold mb-4 text-[--color-text-tertiary] uppercase tracking-wide">
+              <h2 className="text-sm font-semibold mb-4 text-[var(--color-text-tertiary)] uppercase tracking-wide">
                 Location
               </h2>
-              <p className="text-base text-[--color-text-secondary]">
+              <p className="text-base text-[var(--color-text-secondary)]">
                 Vršac, Serbia
               </p>
             </div>
