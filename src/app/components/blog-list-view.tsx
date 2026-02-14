@@ -1,3 +1,4 @@
+import { Card } from "@/app/components/ui/card";
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
 import { Badge } from "@/app/components/ui/badge";
@@ -136,13 +137,13 @@ export function BlogListView({ posts, onCommandOpen }: BlogListViewProps) {
                 to={`/blog/${generateSlug(post.title)}`}
                 className="group block"
               >
-                <article className="cursor-pointer border border-[--color-border-subtle] rounded-[--radius-lg] p-6 md:p-8 bg-[--color-bg-secondary] hover:shadow-[--shadow-lg] transition-all duration-300 hover:border-[--color-border-default]">
+                <article className="cursor-pointer border border-[--color-border-subtle] rounded-[var(--radius-lg)] p-6 md:p-8 bg-[--color-bg-secondary] hover:shadow-[--shadow-lg] transition-all duration-300 hover:border-[--color-border-default]">
                   <div className="grid md:grid-cols-5 gap-6 md:gap-10">
                     {/* Image */}
                     <div
                       className={`md:col-span-2 ${index % 2 === 0 ? "md:order-1" : "md:order-2"}`}
                     >
-                      <div className="aspect-[4/3] overflow-hidden rounded-[--radius-md] bg-[--color-bg-tertiary]">
+                      <div className="aspect-[4/3] overflow-hidden rounded-[var(--radius-md)] bg-[--color-bg-tertiary]">
                         <img
                           src={post.imageUrl}
                           alt={post.title}

@@ -1,5 +1,13 @@
 import { useEffect, useState, useRef } from "react";
-import { Search, ArrowRight, FileText, User, Award, Mail } from "lucide-react";
+import {
+  Search,
+  ArrowRight,
+  FileText,
+  User,
+  Award,
+  Mail,
+  Command,
+} from "lucide-react";
 import type { BlogPost } from "@/app/App";
 
 interface CommandPaletteProps {
@@ -149,14 +157,11 @@ export function CommandPalette({
   return (
     <>
       {/* Backdrop */}
-      <div
-        className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50"
-        onClick={onClose}
-      />
+      <div className="fixed inset-0 backdrop-blur-sm z-50" onClick={onClose} />
 
       {/* Command Palette */}
-      <div className="fixed inset-x-4 top-[20vh] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl z-50">
-        <div className="bg-[--color-bg-primary] border border-[--color-border-default] rounded-[--radius-lg] shadow-2xl overflow-hidden">
+      <div className="fixed inset-x-4 top-[20vh] backdrop-blur-none bg-[bg-secondary] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl z-60">
+        <div className="border border-[--color-border-default] rounded-[--radius-lg] shadow-2xl overflow-hidden">
           {/* Search Input */}
           <div className="flex items-center gap-3 px-4 py-4 border-b border-[--color-border-subtle]">
             <Search className="h-5 w-5 text-[--color-text-tertiary] flex-shrink-0" />
