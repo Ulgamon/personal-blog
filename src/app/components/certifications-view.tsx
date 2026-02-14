@@ -181,14 +181,15 @@ export function CertificationsView({ onCommandOpen }: CertificationsViewProps) {
                     ))}
                   </div>
                 </div>
-
-                <Button
-                  variant="ghost"
-                  className="text-[var(--color-accent-primary)] hover:text-[var(--color-accent-hover)] p-0 h-auto font-medium transition-colors duration-200 group"
-                >
-                  View credential
-                  <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-                </Button>
+                <a href={cert.link} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="ghost"
+                    className="text-[var(--color-accent-primary)] hover:text-[var(--color-accent-hover)] p-0 h-auto font-medium cursor-pointer transition-colors duration-200 group"
+                  >
+                    View credential
+                    <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+                  </Button>
+                </a>
               </div>
             ))}
           </div>

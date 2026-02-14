@@ -149,23 +149,26 @@ export function CommandPalette({
   return (
     <>
       {/* Backdrop */}
-      <div className="fixed inset-0 backdrop-blur-sm z-50" onClick={onClose} />
+      <div
+        className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50"
+        onClick={onClose}
+      />
 
       {/* Command Palette */}
-      <div className="fixed inset-x-4 top-[20vh] backdrop-blur-none bg-[var(--color-bg-secondary)] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl z-60">
-        <div className="border border-[--color-border-default] rounded-[var(--radius-lg)] shadow-2xl overflow-hidden">
+      <div className="fixed inset-x-4 top-[20vh] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl z-50">
+        <div className="bg-[var(--color-bg-primary)] border border-[var(--color-border-default)] rounded-[var(--radius-lg)] shadow-2xl overflow-hidden">
           {/* Search Input */}
-          <div className="flex items-center gap-3 px-4 py-4 border-b border-[--color-border-subtle]">
-            <Search className="h-5 w-5 text-[--color-text-tertiary] flex-shrink-0" />
+          <div className="flex items-center gap-3 px-4 py-4 border-b border-[var(--color-border-subtle)]">
+            <Search className="h-5 w-5 text-[var(--color-text-tertiary)] flex-shrink-0" />
             <input
               ref={inputRef}
               type="text"
               placeholder="Search pages and posts..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="flex-1 bg-transparent outline-none text-[--color-text-primary] placeholder:text-[--color-text-tertiary]"
+              className="flex-1 bg-transparent outline-none text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)]"
             />
-            <kbd className="hidden md:inline-flex items-center gap-1 px-2 py-1 text-xs bg-[--color-bg-tertiary] border border-[--color-border-subtle] rounded-[var(--radius-sm)] text-[--color-text-tertiary]">
+            <kbd className="hidden md:inline-flex items-center gap-1 px-2 py-1 text-xs bg-[var(--color-bg-tertiary)] border border-[var(--color-border-subtle)] rounded-[var(--radius-sm)] text-[var(--color-text-tertiary)]">
               ESC
             </kbd>
           </div>
@@ -174,7 +177,9 @@ export function CommandPalette({
           <div className="max-h-[60vh] overflow-y-auto">
             {filteredResults.length === 0 ? (
               <div className="px-4 py-12 text-center">
-                <p className="text-[--color-text-tertiary]">No results found</p>
+                <p className="text-[var(--color-text-tertiary)]">
+                  No results found
+                </p>
               </div>
             ) : (
               <div className="py-2">
@@ -186,24 +191,24 @@ export function CommandPalette({
                       onClick={result.action}
                       className={`w-full flex items-start gap-3 px-4 py-3 transition-colors ${
                         index === selectedIndex
-                          ? "bg-[--color-bg-tertiary]"
-                          : "hover:bg-[--color-bg-secondary]"
+                          ? "bg-[var(--color-bg-tertiary)]"
+                          : "hover:bg-[var(--color-bg-secondary)]"
                       }`}
                       onMouseEnter={() => setSelectedIndex(index)}
                     >
-                      <Icon className="h-5 w-5 text-[--color-text-tertiary] flex-shrink-0 mt-0.5" />
+                      <Icon className="h-5 w-5 text-[var(--color-text-tertiary)] flex-shrink-0 mt-0.5" />
                       <div className="flex-1 text-left min-w-0">
-                        <div className="font-medium text-[--color-text-primary] mb-0.5">
+                        <div className="font-medium text-[var(--color-text-primary)] mb-0.5">
                           {result.title}
                         </div>
                         {result.subtitle && (
-                          <div className="text-sm text-[--color-text-tertiary] truncate">
+                          <div className="text-sm text-[var(--color-text-tertiary)] truncate">
                             {result.subtitle}
                           </div>
                         )}
                       </div>
                       {index === selectedIndex && (
-                        <ArrowRight className="h-4 w-4 text-[--color-text-tertiary] flex-shrink-0 mt-1" />
+                        <ArrowRight className="h-4 w-4 text-[var(--color-text-tertiary)] flex-shrink-0 mt-1" />
                       )}
                     </button>
                   );
@@ -213,20 +218,20 @@ export function CommandPalette({
           </div>
 
           {/* Footer */}
-          <div className="px-4 py-3 border-t border-[--color-border-subtle] bg-[--color-bg-secondary]">
-            <div className="flex items-center justify-between text-xs text-[--color-text-tertiary]">
+          <div className="px-4 py-3 border-t border-[var(--color-border-subtle)] bg-[var(--color-bg-secondary)]">
+            <div className="flex items-center justify-between text-xs text-[var(--color-text-tertiary)]">
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-1.5">
-                  <kbd className="px-1.5 py-0.5 bg-[--color-bg-primary] border border-[--color-border-subtle] rounded text-[10px]">
+                  <kbd className="px-1.5 py-0.5 bg-[var(--color-bg-primary)] border border-[var(--color-border-subtle)] rounded text-[10px]">
                     ↑
                   </kbd>
-                  <kbd className="px-1.5 py-0.5 bg-[--color-bg-primary] border border-[--color-border-subtle] rounded text-[10px]">
+                  <kbd className="px-1.5 py-0.5 bg-[var(--color-bg-primary)] border border-[var(--color-border-subtle)] rounded text-[10px]">
                     ↓
                   </kbd>
                   <span>Navigate</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <kbd className="px-1.5 py-0.5 bg-[--color-bg-primary] border border-[--color-border-subtle] rounded text-[10px]">
+                  <kbd className="px-1.5 py-0.5 bg-[var(--color-bg-primary)] border border-[var(--color-border-subtle)s] rounded text-[10px]">
                     ↵
                   </kbd>
                   <span>Select</span>
