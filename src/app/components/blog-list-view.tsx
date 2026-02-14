@@ -88,8 +88,13 @@ export function BlogListView({ posts, onCommandOpen }: BlogListViewProps) {
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 bg-[var(--color-bg-primary)] border-[var(--color-border-default)]"
+                className="pl-10 pr-16 bg-[var(--color-bg-primary)] border-[var(--color-border-default)]"
               />
+              {onCommandOpen && (
+                <kbd className="absolute right-3 top-1/2 -translate-y-1/2 hidden sm:inline-flex items-center gap-1 px-2 py-1 text-xs bg-[var(--color-bg-tertiary)] border border-[var(--color-border-subtle)] rounded-[var(--radius-sm)] text-[var(--color-text-tertiary)] font-mono">
+                  <span className="text-[10px]">⌘</span>K
+                </kbd>
+              )}
             </div>
 
             {/* Category Filter */}

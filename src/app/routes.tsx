@@ -155,6 +155,86 @@ By clearly separating external input from internal models, you reduce risk, impr
     tags: ["AutoMapper", "ASP.NET", "Security", "Overposting", "Secure Coding"],
     slug: "automapper-overposting-attacks-secure-mapping",
   },
+  {
+    id: 1,
+    title: "Introducing Algo.Observer: Learning Algorithms Through Observation",
+    excerpt:
+      "Algo.Observer is an early-stage project focused on making algorithms easier to understand through visualization, documentation, and experimentation.",
+    content: `# Introducing Algo.Observer
+
+[Algo.Observer](https://www.algo.observer/) is an early-stage learning platform focused on helping developers understand algorithms by *observing how they work*, not just reading about them.
+
+The project is intentionally starting small, with the goal of growing into an interactive space where algorithms, data structures, and system behaviors can be explored step by step.
+
+## Why Algo.Observer?
+
+Algorithms are often taught as static code snippets or abstract explanations. While useful, this approach can make it difficult to build intuition about how algorithms behave in real scenarios.
+
+Algo.Observer aims to bridge that gap by combining:
+- Clear explanations
+- Visual representations
+- Incremental execution
+- Practical examples
+
+The goal is not to replace textbooks or courses, but to complement them.
+
+## Current State
+
+At the moment, Algo.Observer is in **early development**.
+
+What exists today:
+- A foundation for structured content
+- Early examples of algorithm-focused articles
+- Initial layout and navigation concepts
+
+What does not exist yet:
+- Full visualizations
+- Interactive controls
+- Comprehensive algorithm coverage
+
+And that’s intentional.
+
+## Planned Direction
+
+As the platform evolves, future iterations will focus on:
+- Interactive algorithm visualizations
+- Step-by-step execution views
+- Clear separation between theory and implementation
+- Documentation-style explanations backed by visuals
+- A focus on correctness, clarity, and learning efficiency
+
+The emphasis will always be on understanding *why* something works, not just *how* to implement it.
+
+## Who Is This For?
+
+Algo.Observer is being built for:
+- Developers learning algorithms for the first time
+- Engineers revisiting fundamentals
+- Anyone who prefers visual and exploratory learning
+- People who want depth without unnecessary complexity
+
+## Looking Ahead
+
+This initial version is just the starting point. The structure, content, and tooling will evolve over time as ideas are tested and refined.
+
+Algo.Observer is a long-term project, and this post serves as a snapshot of its earliest stage.
+
+> The best way to understand an algorithm is to watch it work.
+
+You can follow the project at  
+👉 https://www.algo.observer/
+
+More content and features will follow.
+`,
+    author: "Justin Ilić",
+    date: "2026-01-10",
+    readTime: "4 min read",
+    category: "Project",
+    imageUrl:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+    tags: ["Algorithms", "Learning", "Visualization", "Education"],
+    slug: "introducing-algo-observer",
+  },
 ];
 
 // Blog Post Page Component
