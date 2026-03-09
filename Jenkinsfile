@@ -62,7 +62,7 @@ pipeline {
 
         stage("Delete Items From S3 Bucket") {
             steps {
-                withAWS(credentials: "AWSFrontendUser", region: "eu-central-1") {
+                withAWS(credentials: "AWSFrontendUser2", region: "eu-central-1") {
                     sh "aws s3 rm ${S3_BUCKET_URL} --recursive"
                 }
             }
@@ -70,7 +70,7 @@ pipeline {
 
         stage("Download Items to S3 Bucket") {
             steps {
-                withAWS(credentials: "AWSFrontendUser", region: "eu-central-1") {
+                withAWS(credentials: "AWSFrontendUser2", region: "eu-central-1") {
                     sh "aws s3 cp ./dist ${S3_BUCKET_URL} --recursive"
                 }
             }
@@ -78,7 +78,7 @@ pipeline {
         
         stage("Invalidate CloudFront Cache") {
             steps {
-                withAWS(credentials: "AWSFrontendUser", region: "eu-central-1") {
+                withAWS(credentials: "AWSFrontendUser2", region: "eu-central-1") {
                     sh "aws cloudfront create-invalidation --distribution-id ${CF_DISTRIBUTION_ID} --paths '/*'"
                 }
             }
