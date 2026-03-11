@@ -1,5 +1,13 @@
 import { useEffect, useState, useRef } from "react";
-import { Search, ArrowRight, FileText, User, Award, Mail } from "lucide-react";
+import {
+  Search,
+  ArrowRight,
+  FileText,
+  User,
+  Award,
+  Mail,
+  type LucideIcon,
+} from "lucide-react";
 import type { BlogPost } from "@/app/App";
 
 interface CommandPaletteProps {
@@ -15,7 +23,7 @@ interface SearchResult {
   id: string;
   title: string;
   subtitle?: string;
-  icon: any;
+  icon: LucideIcon;
   action: () => void;
 }
 
@@ -26,7 +34,7 @@ export function CommandPalette({
   onPostSelect,
   onNavigate,
 }: CommandPaletteProps) {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState<string>("");
   const inputRef = useRef<HTMLInputElement>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -113,8 +121,6 @@ export function CommandPalette({
   useEffect(() => {
     if (isOpen) {
       inputRef.current?.focus();
-      setQuery("");
-      setSelectedIndex(0);
     }
   }, [isOpen]);
 

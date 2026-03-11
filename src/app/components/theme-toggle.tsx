@@ -5,25 +5,6 @@ import { Button } from "@/app/components/ui/button";
 
 export function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  // Avoid hydration mismatch by only rendering after mount
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return (
-      <Button
-        variant="ghost"
-        size="icon"
-        className="rounded-full h-10 w-10"
-        disabled
-      >
-        <span className="h-[18px] w-[18px]" />
-      </Button>
-    );
-  }
 
   const isDark = resolvedTheme === "dark";
 

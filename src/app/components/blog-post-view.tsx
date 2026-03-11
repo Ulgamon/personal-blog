@@ -85,7 +85,7 @@ export function BlogPostView({ post, onCommandOpen }: BlogPostViewProps) {
                 </p>
               </div>
               {/* Share popover */}
-              <SharePopover url={postUrl} title={post.title} />
+              <SharePopover url={postUrl} title={post.slug} />
             </div>
 
             <Separator className="bg-[var(--color-border-subtle)]" />

@@ -156,7 +156,7 @@ By clearly separating external input from internal models, you reduce risk, impr
     slug: "automapper-overposting-attacks-secure-mapping",
   },
   {
-    id: 1,
+    id: 2,
     title: "Introducing Algo.Observer: Learning Algorithms Through Observation",
     excerpt:
       "Algo.Observer is an early-stage project focused on making algorithms easier to understand through visualization, documentation, and experimentation.",
@@ -233,7 +233,7 @@ More content and features will follow.
     imageUrl:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
     tags: ["Algorithms", "Learning", "Visualization", "Education"],
-    slug: "introducing-algo-observer",
+    slug: "introducing-algo-observer-learning-algorithms-through-observation",
   },
 ];
 
@@ -244,11 +244,16 @@ function BlogPostPage() {
   const { onCommandOpen } = useOutletContext<{ onCommandOpen: () => void }>();
   const post = findPostBySlug(mockBlogPosts, slug || "");
 
+  useEffect(() => {
+    // Redirect to home if post not found
+
+    if (!post) {
+      navigate("/");
+    }
+  }, [navigate, post]);
+
   if (!post) {
     // Redirect to home if post not found
-    useEffect(() => {
-      navigate("/");
-    }, [navigate]);
     return null;
   }
 
